@@ -1,0 +1,335 @@
+Velocimetro 4 = 
+
+
+------------------------------
+-- Principais 
+------------------------------
+VAR vValor = 100
+
+VAR vValorDois = 90
+
+VAR vPorcentagem =  DIVIDE( vValor, vValorDois ) 
+
+VAR vVariacao = vValor - vValorDois 
+
+
+------------------------------
+-- Formatações  
+------------------------------
+
+VAR vVisual = 1
+/* 
+    1 = Nativo 
+    0 = HTML 
+*/ 
+
+VAR vAnimacao = 0
+/* 
+    1 = Animado 
+    0 = Sem animação 
+*/ 
+
+VAR vMarcadoresCor = "#999999"
+
+VAR vProgressoFundoCor = "#d1d1d1" 
+VAR vProgressoValorCor = IF( vPorcentagem >= 1, "#94FE92", "#FE9292" )  
+VAR vProgressoValorDoisCor = "#7E7E7E"
+
+
+VAR vFonte = "Cambria"
+
+VAR vNumerosCor = "#263238"
+VAR vNumerosTam = 7
+
+
+VAR vTextoValor =     "Valor 1" 
+VAR vTextoValorDois = "Valor 2" 
+VAR vRotCatValorCor = "#565656"
+VAR vRotCatValorTam = 9
+VAR vRotCatValorPeso = 500
+VAR vValoresVisibilidade =  1
+/* 
+    1 = Visível 
+    0 = Invisível
+*/ 
+
+
+VAR vPorcentagemCor = vProgressoValorCor
+VAR vPorcentagemTam = 15
+VAR vPorcentagemPeso = 600
+
+VAR vVariacaoCor = vProgressoValorCor 
+VAR vVariacaoTam = 15
+VAR vVariacaoPeso = 600  
+
+
+VAR vTextoPorcentagem =     "Percentual Meta" 
+VAR vTextoVariacao =        "Variação em R$" 
+VAR vRotCatCentralCor =     "#565656"
+VAR vRotCatCentralTam =     9
+VAR vRotCatCentralPeso =    500
+
+
+------------------------------
+-- Formatações Valores 
+------------------------------
+
+VAR vValorFormat = 
+    SWITCH(
+        TRUE(),
+        ABS( vValor )  >= 1E9, FORMAT(vValor, "R$ 0,,,.00 Bi"),
+        ABS( vValor )  >= 1E6, FORMAT(vValor, "R$ 0,,.00 Mi"),
+        ABS( vValor )  >= 1E3, FORMAT(vValor, "R$ 0,.00 k"),
+        FORMAT(vValor, "R$ 0")
+    ) 
+
+VAR vValorDoisFormat = 
+    SWITCH(
+        TRUE(),
+        ABS( vValorDois )  >= 1E9, FORMAT(vValorDois, "R$ 0,,,.00 Bi"),
+        ABS( vValorDois )  >= 1E6, FORMAT(vValorDois, "R$ 0,,.00 Mi"),
+        ABS( vValorDois )  >= 1E3, FORMAT(vValorDois, "R$ 0,.00 k"),
+        FORMAT(vValorDois, "R$ 0")
+    ) 
+
+VAR vPorcentagemFormat = 
+    FORMAT( vPorcentagem, "0%" ) 
+
+
+VAR vVariacaoFormat = 
+    SWITCH(
+        TRUE(),
+        ABS( vVariacao )  >= 1E9, FORMAT(vVariacao, "+ R$ 0,,,.00 Bi; - R$ 0,,,.00 Bi; - "),
+        ABS( vVariacao )  >= 1E6, FORMAT(vVariacao, "+ R$ 0,,.00 Mi; - R$ 0,,.00 Mi; - "),
+        ABS( vVariacao )  >= 1E3, FORMAT(vVariacao, "+ R$ 0,.00 k; - R$ 0,.00 k; - " ),
+        FORMAT(vVariacao, "+ R$ 0;-R$ 0; - ")
+    ) 
+
+
+
+
+
+------------------------------
+-- Configurações Rotação
+------------------------------
+
+VAR vMinimo = 0
+VAR vMaximo = MAX( vValor, vValorDois )
+
+VAR vPontoFinal = vMaximo  * 1.1
+
+VAR vDiferenca = vPontoFinal - vMinimo 
+
+VAR vGiroMaximoValor = 516 
+VAR vFatorValor = vGiroMaximoValor / vDiferenca 
+VAR vGiroValor =   ROUND( vGiroMaximoValor - ( vValor * vFatorValor ), 0 ) 
+
+VAR vGiroMaximoValorDois = 467 
+VAR vFatorValorDois = vGiroMaximoValorDois / vDiferenca 
+VAR vGiroMeta =    ROUND( vGiroMaximoValorDois - ( vValorDois * vFatorValorDois ), 0 ) 
+
+
+
+
+RETURN
+
+ IF( vVisual = 1,  "data:image/svg+xml,"  ) & 
+
+"
+    
+ <svg viewBox='0 0 250 250' fill='none' xmlns='http://www.w3.org/2000/svg' sort='" & FORMAT( vPorcentagem, "0000" ) & "'>
+
+    <defs>
+        <style>
+            #progressoValor {
+                stroke-dasharray: 516;
+                stroke-dashoffset: " & vGiroValor & ";
+                " & IF( vAnimacao = 1, "animation" ) & ": anima1 1s linear forwards
+            }
+
+            #progressoValorDois {
+                stroke-dasharray: 467 ;
+                stroke-dashoffset: " & vGiroMeta & ";
+                " & IF( vAnimacao = 1, "animation" ) & ": anima2 1s linear forwards
+            }
+            
+            #rotulosValores {
+                opacity: " & vValoresVisibilidade  & "
+            }
+
+
+            @keyframes anima1 {
+
+                from {
+                    stroke-dashoffset: 516
+                }
+
+                to {
+                    stroke-dashoffset: " & vGiroValor & "
+                }
+            }
+
+            @keyframes anima2 {
+
+                from {
+                    stroke-dashoffset: 467
+                }
+
+                to {
+                    stroke-dashoffset: " & vGiroMeta & "
+                }
+            }
+
+        </style>
+
+
+    </defs>
+
+
+	<g id='Velocimetro'>
+				
+        <path id='marcadores' fill-rule='evenodd' clip-rule='evenodd' d='M132.994 32.3032L132.532 32.268L132.181 36.8796L132.642 36.9148L132.994 32.3032ZM124.693 32.002L124.23 32.0082L124.293 36.6328L124.756 36.6265L124.693 32.002ZM115.938 32.4936L116.398 32.4459L116.876 37.0462L116.416 37.0939L115.938 32.4936ZM105.454 33.9996L105 34.0883L105.889 38.6274L106.343 38.5386L105.454 33.9996ZM99.6504 35.6762L100.095 35.5471L101.387 39.9883L100.943 40.1174L99.6504 35.6762ZM92.2175 38.1797L91.7864 38.3481L93.472 42.6557L93.9031 42.4873L92.2175 38.1797ZM84.1939 41.7133L84.6081 41.507L86.6734 45.6463L86.2591 45.8526L84.1939 41.7133ZM77.3281 45.503L76.9341 45.7455L79.3624 49.6833L79.7564 49.4407L77.3281 45.503ZM63.6426 55.6743L63.9869 55.3653L67.0798 58.8065L66.7355 59.1155L63.6426 55.6743ZM58.0333 61.153L57.718 61.4916L61.1071 64.6421L61.4224 64.3035L58.0333 61.153ZM52.3394 67.8159L52.623 67.4504L56.281 70.2846L55.9974 70.6501L52.3394 67.8159ZM47.7992 74.2067L47.5496 74.5961L51.4471 77.0913L51.6968 76.7019L47.7992 74.2067ZM45 79.4096L45.2137 78.9994L49.3194 81.1355L49.1056 81.5457L45 79.4096ZM40.0625 88.8774L39.8865 89.3051L44.1672 91.0649L44.3432 90.6371L40.0625 88.8774ZM37.0747 97.1147L37.2117 96.6729L41.633 98.0422L41.496 98.4839L37.0747 97.1147ZM35.0717 104.693L34.9749 105.145L39.5011 106.113L39.5979 105.66L35.0717 104.693ZM33.6038 113.331L33.6596 112.872L38.2544 113.431L38.1986 113.89L33.6038 113.331ZM33.0144 118.537L33 118.999L37.6264 119.144L37.6408 118.682L33.0144 118.537ZM130.526 216.624L130.063 216.631L130 212.006L130.463 212L130.526 216.624ZM135.478 216.648L135.938 216.6L135.46 212L135 212.047L135.478 216.648ZM143.277 215.281L142.823 215.369L141.934 210.83L142.388 210.742L143.277 215.281ZM150.905 213.453L151.349 213.324L150.057 208.882L149.612 209.012L150.905 213.453ZM159.117 210.307L158.686 210.475L157 206.168L157.431 205.999L159.117 210.307ZM173.672 203.496L174.066 203.253L171.637 199.316L171.243 199.558L173.672 203.496ZM180.935 198.588L180.564 198.865L177.792 195.161L178.163 194.884L180.935 198.588ZM187.013 193.635L187.357 193.326L184.264 189.884L183.92 190.193L187.013 193.635ZM192.704 188.15L192.389 188.488L189 185.338L189.315 184.999L192.704 188.15ZM196.658 184.199L196.941 183.833L193.283 180.999L193 181.365L196.658 184.199ZM203.45 174.404L203.201 174.793L199.303 172.298L199.553 171.909L203.45 174.404ZM207.399 167.631L207.613 167.221L203.507 165.085L203.293 165.495L207.399 167.631ZM211.114 159.695L210.937 160.122L206.657 158.363L206.833 157.935L211.114 159.695ZM213.788 152.327L213.925 151.885L209.504 150.516L209.367 150.958L213.788 152.327ZM215.623 144.967L215.526 145.419L211 144.452L211.097 143.999L215.623 144.967ZM217.595 134.017L217.65 133.558L213.056 133L213 133.459L217.595 134.017ZM218.027 127.393L218.013 127.855L213.386 127.711L213.401 127.248L218.027 127.393ZM217.94 119.556L217.913 119.094L213.292 119.365L213.32 119.826L217.94 119.556ZM217.055 110.838L217.123 111.296L212.545 111.979L212.477 111.521L217.055 110.838ZM215.569 103.141L215.46 102.692L210.962 103.782L211.071 104.232L215.569 103.141ZM211.382 90.9995L211.531 91.4373L207.149 92.9262L207 92.4884L211.382 90.9995ZM209.418 85.4222L209.231 84.9995L205 86.8749L205.188 87.2977L209.418 85.4222ZM206.045 78.9995L206.27 79.4037L202.225 81.6506L202 81.2463L206.045 78.9995ZM202.311 72.879L202.051 72.4965L198.223 75.0967L198.484 75.4792L202.311 72.879ZM197.579 66.9995L197.872 67.3571L194.293 70.2897L194 69.932L197.579 66.9995ZM193.626 62.3294L193.301 61.9995L190 65.2408L190.324 65.5707L193.626 62.3294ZM185.444 54.019L185.797 54.3185L182.8 57.8426L182.447 57.543L185.444 54.019ZM179.258 49.1998L178.88 48.933L176.211 52.7114L176.589 52.9781L179.258 49.1998ZM171.885 44.4555L172.286 44.6873L169.967 48.6895L169.566 48.4577L171.885 44.4555ZM164.937 40.8175L164.517 40.6225L162.566 44.8164L162.986 45.0114L164.937 40.8175ZM158.567 37.9995L159.002 38.1561L157.435 42.5079L157 42.3513L158.567 37.9995ZM149.349 35.1242L148.901 35.0073L147.731 39.4819L148.179 39.5989L149.349 35.1242ZM140.778 33.27L141.235 33.3463L140.471 37.9079L140.014 37.8315L140.778 33.27ZM110.042 33.3012L110.535 33.2177L112.206 43.077L111.713 43.1606L110.042 33.3012ZM153.808 36.436L153.331 36.2856L150.322 45.8222L150.799 45.9727L153.808 36.436ZM190.587 58.7729L190.942 59.1247L183.906 66.2303L183.55 65.8784L190.587 58.7729ZM213.588 96.2668L213.433 95.7915L203.927 98.8949L204.082 99.3702L213.588 96.2668ZM216.841 139.096L216.762 139.59L206.887 138.012L206.966 137.518L216.841 139.096ZM199.887 179.481L200.182 179.078L192.108 173.177L191.813 173.581L199.887 179.481ZM166.904 207.216L167.35 206.99L162.826 198.072L162.38 198.298L166.904 207.216ZM70.6206 50.037L70.2197 50.3358L76.196 58.3536L76.5969 58.0548L70.6206 50.037ZM42.5035 83.661L42.7243 83.2124L51.6969 87.6275L51.4761 88.0761L42.5035 83.661ZM32.999 124.71L33.0029 125.21L43.0026 125.134L42.9987 124.634L32.999 124.71ZM125 207H125.5V217H125V207Z' fill='" & vMarcadoresCor & "'/>
+		
+        <g id='circFundo'>
+			<mask id='path-2-inside-1_5002_19' fill='white'>
+				<path d='M9 125C9 102.057 15.8033 79.6299 28.5495 60.5538C41.2958 41.4777 59.4125 26.6097 80.6087 17.83C101.805 9.0502 125.129 6.75302 147.63 11.2289C170.132 15.7048 190.802 26.7527 207.024 42.9756C223.247 59.1985 234.295 79.8678 238.771 102.37C243.247 124.871 240.95 148.195 232.17 169.391C223.39 190.588 208.522 208.704 189.446 221.45C170.37 234.197 147.943 241 125 241L125 218.408C143.474 218.408 161.534 212.93 176.895 202.666C192.255 192.402 204.228 177.814 211.298 160.746C218.367 143.678 220.217 124.896 216.613 106.777C213.009 88.6577 204.113 72.0141 191.049 58.9508C177.986 45.8874 161.342 36.9912 143.223 33.387C125.104 29.7829 106.322 31.6327 89.2544 38.7025C72.1864 45.7723 57.5981 57.7446 47.3343 73.1054C37.0705 88.4662 31.5922 106.526 31.5922 125L9 125Z'/>
+			</mask>
+			<path d='M9 125C9 102.057 15.8033 79.6299 28.5495 60.5538C41.2958 41.4777 59.4125 26.6097 80.6087 17.83C101.805 9.0502 125.129 6.75302 147.63 11.2289C170.132 15.7048 190.802 26.7527 207.024 42.9756C223.247 59.1985 234.295 79.8678 238.771 102.37C243.247 124.871 240.95 148.195 232.17 169.391C223.39 190.588 208.522 208.704 189.446 221.45C170.37 234.197 147.943 241 125 241L125 218.408C143.474 218.408 161.534 212.93 176.895 202.666C192.255 192.402 204.228 177.814 211.298 160.746C218.367 143.678 220.217 124.896 216.613 106.777C213.009 88.6577 204.113 72.0141 191.049 58.9508C177.986 45.8874 161.342 36.9912 143.223 33.387C125.104 29.7829 106.322 31.6327 89.2544 38.7025C72.1864 45.7723 57.5981 57.7446 47.3343 73.1054C37.0705 88.4662 31.5922 106.526 31.5922 125L9 125Z' fill='" & vProgressoFundoCor  & "'  mask='url(#path-2-inside-1_5002_19)'/>
+		</g>
+		
+        <path id='progressoValor' d='M15 124C15.1871 102.327 21.7766 81.2434 33.9334 63.3003C46.0902 45.3573 63.2767 31.4053 83.3353 23.1961C103.394 14.9868 125.431 12.886 146.679 17.1575C167.928 21.429 187.441 31.8823 202.769 47.2053C218.097 62.5282 228.557 82.0378 232.835 103.285C237.114 124.532 235.02 146.569 226.818 166.631C218.615 186.692 204.669 203.883 186.73 216.046C168.791 228.209 147.673 234.806 126 235' stroke='" & vProgressoValorCor & "' stroke-width='8'/>
+		
+        <path id='progressoValorDois' d='M25.5 124C25.6874 104.404 31.6616 84.8513 42.6643 68.6352C53.6671 52.4192 69.2132 39.813 87.3527 32.3981C105.492 24.9831 125.417 23.0895 144.629 26.9548C163.84 30.8201 181.483 40.2721 195.343 54.1252C209.203 67.9784 218.665 85.6159 222.54 104.825C226.415 124.035 224.532 143.961 217.127 162.104C209.721 180.248 197.123 195.8 180.913 206.812C164.703 217.823 145.602 223.802 126.006 224' stroke='" & vProgressoValorDoisCor & "' stroke-width='8.0404'/>
+		
+        <g id='numeros'>
+			<text id='0' fill='" & vNumerosCor & "'  font-family='" & vFonte & "' font-size='" & vNumerosTam & "' font-weight='500'>
+				<tspan x='47.2407' y='125.545'>0</tspan>
+			</text>
+
+            <text id='2' text-anchor='start' fill='" & vNumerosCor & "'  font-family='" & vFonte & "' font-size='" & vNumerosTam & "' font-weight='500'>
+				<tspan x='77' y='67'>
+                "& 
+                SWITCH(
+                    TRUE(),
+                    ABS( vPontoFinal * 0.2 )  >= 1E9, FORMAT(vPontoFinal * 0.2, "0,,,.00 Bi"),
+                    ABS( vPontoFinal * 0.2 )  >= 1E6, FORMAT(vPontoFinal * 0.2, "0,,.00 Mi"),
+                    ABS( vPontoFinal * 0.2 )  >= 1E3, FORMAT(vPontoFinal * 0.2, "0,.0 k"),
+                    FORMAT(vPontoFinal * 0.2, "0")
+                )   
+                & "
+                </tspan>
+			</text>
+
+            <text id='4' text-anchor='middle' fill='" & vNumerosCor & "'  font-family='" & vFonte & "' font-size='" & vNumerosTam & "' font-weight='500'>
+				<tspan x='150' y='56'>
+                "& 
+                SWITCH(
+                    TRUE(),
+                    ABS( vPontoFinal * 0.4 )  >= 1E9, FORMAT(vPontoFinal * 0.4, "0,,,.00 Bi"),
+                    ABS( vPontoFinal * 0.4 )  >= 1E6, FORMAT(vPontoFinal * 0.4, "0,,.00 Mi"),
+                    ABS( vPontoFinal * 0.4 )  >= 1E3, FORMAT(vPontoFinal * 0.4, "0,.0 k"),
+                    FORMAT(vPontoFinal * 0.4, "0")
+                )   
+                & "
+                </tspan>
+			</text>
+
+            <text id='6' text-anchor='end' fill='" & vNumerosCor & "'  font-family='" & vFonte & "' font-size='" & vNumerosTam & "' font-weight='500'>
+				<tspan x='198' y='102'>
+                "& 
+                SWITCH(
+                    TRUE(),
+                    ABS( vPontoFinal * 0.6 )  >= 1E9, FORMAT(vPontoFinal * 0.6, "0,,,.00 Bi"),
+                    ABS( vPontoFinal * 0.6 )  >= 1E6, FORMAT(vPontoFinal * 0.6, "0,,.00 Mi"),
+                    ABS( vPontoFinal * 0.6 )  >= 1E3, FORMAT(vPontoFinal * 0.6, "0,.0 k"),
+                    FORMAT(vPontoFinal * 0.6, "0")
+                )   
+                & "
+                </tspan>
+			</text>
+
+            <text id='8' text-anchor='end' fill='" & vNumerosCor & "'  font-family='" & vFonte & "' font-size='" & vNumerosTam & "' font-weight='500'>
+				<tspan x='190' y='172'>
+                "& 
+                SWITCH(
+                    TRUE(),
+                    ABS( vPontoFinal * 0.8 )  >= 1E9, FORMAT(vPontoFinal * 0.8, "0,,,.0 Bi"),
+                    ABS( vPontoFinal * 0.8 )  >= 1E6, FORMAT(vPontoFinal * 0.8, "0,,.00 Mi"),
+                    ABS( vPontoFinal * 0.8 )  >= 1E3, FORMAT(vPontoFinal * 0.8, "0,.0 k"),
+                    FORMAT(vPontoFinal * 0.8, "0")
+                )   
+                & "
+                </tspan>
+			</text>
+
+            <text id='10' text-anchor='middle' fill='" & vNumerosCor & "'  font-family='" & vFonte & "' font-size='" & vNumerosTam & "' font-weight='500'>
+				<tspan x='124' y='201.545'>
+                "& 
+                SWITCH(
+                    TRUE(),
+                    ABS( vPontoFinal )  >= 1E9, FORMAT(vPontoFinal, "0,,,.00 Bi"),
+                    ABS( vPontoFinal )  >= 1E6, FORMAT(vPontoFinal, "0,,.00 Mi"),
+                    ABS( vPontoFinal )  >= 1E3, FORMAT(vPontoFinal, "0,.0 k"),
+                    FORMAT(vPontoFinal, "0")
+                )   
+                & "
+                </tspan>
+			</text>
+			
+			
+		</g>
+
+		<g id='rotulos'>
+
+            
+            <g id='rotulosValores' transform='translate(5,-20)'> 
+			    
+                
+                <text id='rotCatValor' text-anchor='middle' dominant-baseline='hanging' fill='" & vRotCatValorCor & "'  font-family='" & vFonte & "' font-size='" & vRotCatValorTam  & "' font-weight='" & vRotCatValorPeso  & "'>
+				    <tspan x='46' y='204'>" & vTextoValor & "</tspan>
+			    </text>
+
+                <text id='rotValor' text-anchor='middle' dominant-baseline='auto'  fill='" & vProgressoValorCor & "'  font-family='" & vFonte & "' font-size='12' font-weight='600'>
+                    <tspan x='46' y='200'>" & vValorFormat & "</tspan>
+                </text>
+
+
+            
+                <text id='rotCatMeta' text-anchor='middle' dominant-baseline='hanging' fill='" & vRotCatValorCor &  "'  font-family='" & vFonte & "' font-size='" & vRotCatValorTam & "' font-weight='" & vRotCatValorPeso& "'>
+                    <tspan x='46' y='238'> " & vTextoValorDois & "</tspan>
+                </text>
+
+                <text id='rotMeta'   text-anchor='middle' dominant-baseline='auto' fill='" & vProgressoValorDoisCor & "'  font-family='" & vFonte & "' font-size='12' font-weight='600'>
+                    <tspan x='46' y='235'>" & vValorDoisFormat  & "</tspan>
+                </text>
+
+            </g> 
+
+
+
+
+			<text id='rotCatVariacao' text-anchor='middle' dominant-baseline='hanging' fill='" & vRotCatCentralCor & "'  font-family='" & vFonte & "' font-size='" & vRotCatCentralTam & "' font-weight='" & vRotCatCentralPeso & "'>
+				<tspan x='125 ' y='149'> " & vTextoVariacao & " </tspan>
+			</text>
+
+			<text id='rotVariacao' text-anchor='middle' dominant-baseline='auto' fill='" & vVariacaoCor & "'  font-family='" & vFonte & "' font-size='" & vVariacaoTam & "' font-weight='" & vVariacaoPeso & "'>
+				<tspan x='125' y='145'> " & vVariacaoFormat & " </tspan>
+			</text>
+
+
+
+
+			<text id='rotCatPorcentagem' text-anchor='middle' dominant-baseline='hanging' fill='" & vRotCatCentralCor & "'  font-family='" & vFonte & "' font-size='" & vRotCatCentralTam & "' font-weight='" & vRotCatCentralPeso & "'>
+				<tspan x='125' y='109'>    " & vTextoPorcentagem & "  </tspan>
+			</text>
+
+			<text id='Porcentagem' text-anchor='middle' dominant-baseline='auto' fill='" & vPorcentagemCor & "'  font-family='" & vFonte & "' font-size='" & vPorcentagemTam & "' font-weight='" & vPorcentagemPeso & "'>
+				<tspan x='125' y='105'>" & vPorcentagemFormat  & "</tspan>
+			</text>
+
+		</g>
+	</g>
+</svg>
+
+
+"

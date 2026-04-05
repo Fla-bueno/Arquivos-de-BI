@@ -1,0 +1,34 @@
+<svg width="250" height="250" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Velocimetro">
+<circle id="fundo" cx="125" cy="125" r="105" fill="black" fill-opacity="0.5"/>
+<path id="marcador_maior" fill-rule="evenodd" clip-rule="evenodd" d="M123.995 20.0026L125.495 19.9883L125.646 35.7376L124.146 35.7519L123.995 20.0026ZM91.5986 25.4519L93.0207 24.9747L98.0309 39.9066L96.6088 40.3837L91.5986 25.4519ZM63.6769 39.7539L62.4719 40.6472L71.851 53.3L73.0561 52.4067L63.6769 39.7539ZM39.4663 64.1003L40.3363 62.8784L53.1664 72.0136L52.2963 73.2355L39.4663 64.1003ZM25.2825 92.0795L24.8327 93.5105L39.8577 98.2338L40.3076 96.8029L25.2825 92.0795ZM20.0048 126.003L19.9904 124.503L35.7397 124.352L35.7541 125.852L20.0048 126.003ZM24.9769 156.979L25.454 158.401L40.3859 153.391L39.9087 151.969L24.9769 156.979ZM40.6479 187.526L39.7547 186.321L52.4075 176.942L53.3007 178.147L40.6479 187.526ZM209.664 187.119L210.534 185.897L197.704 176.762L196.834 177.984L209.664 187.119ZM225.167 156.487L224.717 157.918L209.692 153.195L210.142 151.764L225.167 156.487ZM230.009 125.495L229.995 123.995L214.246 124.146L214.26 125.646L230.009 125.495ZM224.546 91.5964L225.023 93.0185L210.091 98.0287L209.614 96.6066L224.546 91.5964ZM210.245 63.6764L209.352 62.4714L196.699 71.8506L197.592 73.0556L210.245 63.6764ZM185.901 39.4636L187.123 40.3336L177.988 53.1637L176.766 52.2936L185.901 39.4636ZM157.92 25.2806L156.489 24.8308L151.766 39.8558L153.197 40.3057L157.92 25.2806Z" fill="#AA9A0D"/>
+<path id="marcador_menor" fill-rule="evenodd" clip-rule="evenodd" d="M141.421 21.2889L140.135 21.1016L139.076 28.3748L140.362 28.5622L141.421 21.2889ZM108.568 21.2885L107.286 21.5078L108.526 28.7525L109.808 28.5332L108.568 21.2885ZM76.1716 32.0469L77.3225 31.4423L80.7405 37.9492L79.5896 38.5538L76.1716 32.0469ZM50.7442 50.7569L49.8364 51.6875L55.0979 56.8197L56.0056 55.8891L50.7442 50.7569ZM30.8589 78.5L31.4346 77.3344L38.0245 80.5896L37.4488 81.7552L30.8589 78.5ZM21.2838 108.581L21.0964 109.867L28.3697 110.927L28.5571 109.64L21.2838 108.581ZM21.5046 142.719L21.2853 141.437L28.53 140.197L28.7493 141.479L21.5046 142.719ZM31.4399 172.681L32.0444 173.832L38.5513 170.414L37.9468 169.263L31.4399 172.681ZM219.141 171.508L218.565 172.673L211.975 169.418L212.551 168.253L219.141 171.508ZM228.716 141.423L228.904 140.137L221.63 139.077L221.443 140.364L228.716 141.423ZM228.495 107.289L228.715 108.57L221.47 109.81L221.251 108.529L228.495 107.289ZM218.56 77.3267L217.956 76.1758L211.449 79.5938L212.053 80.7447L218.56 77.3267ZM198.318 49.8398L199.248 50.7476L194.116 56.009L193.185 55.1013L198.318 49.8398ZM172.668 31.439L171.502 30.8633L168.247 37.4532L169.413 38.0289L172.668 31.439Z" fill="#AA9A0D"/>
+<g id="contorno_maximo">
+<mask id="path-4-inside-1_4095_339" fill="white">
+<path d="M213.359 59.482C227.359 78.3626 234.943 101.231 235 124.736C235.056 148.24 227.582 171.145 213.673 190.093L206.865 185.095C219.706 167.602 226.606 146.456 226.554 124.756C226.501 103.056 219.5 81.9436 206.575 64.5127L213.359 59.482Z"/>
+</mask>
+<path d="M213.359 59.482C227.359 78.3626 234.943 101.231 235 124.736C235.056 148.24 227.582 171.145 213.673 190.093L206.865 185.095C219.706 167.602 226.606 146.456 226.554 124.756C226.501 103.056 219.5 81.9436 206.575 64.5127L213.359 59.482Z" stroke="#AA9A0D" stroke-width="16" mask="url(#path-4-inside-1_4095_339)"/>
+</g>
+<circle id="contorno_principal" cx="125" cy="125" r="106.886" stroke="#111111" stroke-width="6.22857"/>
+<g id="numeros">
+<text id="0" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="600" letter-spacing="0em"><tspan x="56" y="177.585">0</tspan></text>
+<text id="10" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="600" letter-spacing="0em"><tspan x="42" y="153.585">10</tspan></text>
+<text id="20" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="600" letter-spacing="0em"><tspan x="38" y="128.585">20</tspan></text>
+<text id="30" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="600" letter-spacing="0em"><tspan x="42" y="101.585">30</tspan></text>
+<text id="40" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="600" letter-spacing="0em"><tspan x="56" y="77.585">40</tspan></text>
+<text id="50" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="600" letter-spacing="0em"><tspan x="73" y="62.585">50</tspan></text>
+<text id="60" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="600" letter-spacing="0em"><tspan x="95" y="50.585">60</tspan></text>
+<text id="70" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="600" letter-spacing="0em"><tspan x="119" y="48.585">70</tspan></text>
+<text id="80" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="600" letter-spacing="0em"><tspan x="144" y="50.585">80</tspan></text>
+<text id="90" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="600" letter-spacing="0em"><tspan x="166" y="62.585">90</tspan></text>
+<text id="100" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="600" letter-spacing="0em"><tspan x="179" y="77.585">100</tspan></text>
+</g>
+<g id="ponteiro">
+<circle id="circ_giro" cx="124.751" cy="128.752" r="84.7505" fill="#D9D9D9" fill-opacity="0.2"/>
+<circle id="circ_interno" cx="124.88" cy="128.469" r="15" transform="rotate(-121.459 124.88 128.469)" fill="#AA9A0D"/>
+<path id="seta" d="M63.7503 171.956L138.996 110.838L146.036 120.709L63.7503 171.956Z" fill="#AA9A0D"/>
+</g>
+<text id="rot_dados" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="25" font-weight="600" letter-spacing="0em"><tspan x="125" y="211.962">100%</tspan></text>
+<text id="rot_catgoria" fill="#B7A2C3" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="600" letter-spacing="0em"><tspan x="125" y="182.585">Meta (%)</tspan></text>
+</g>
+</svg>

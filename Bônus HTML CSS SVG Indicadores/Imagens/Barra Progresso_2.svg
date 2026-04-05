@@ -1,0 +1,9 @@
+<svg width="300" height="111" viewBox="0 0 300 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="barra_progresso_2">
+<rect id="barra_fundo" y="59" width="300" height="23" fill="#745584"/>
+<rect id="barra_progresso" y="59" width="121.558" height="23" fill="#558CA4"/>
+<text id="rot_cat" fill="#F1F1F1" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="19.0202" font-weight="600" letter-spacing="0em"><tspan x="0" y="44.1781">Meta:</tspan></text>
+<text id="rot_dados" fill="#F1F1F1" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="23.7753" font-weight="600" letter-spacing="0em"><tspan x="66.814" y="44.582">120%</tspan></text>
+<rect id="linha_meta" x="207.704" y="49.5195" width="4.76697" height="43.2112" fill="#F1F1F1"/>
+</g>
+</svg>

@@ -1,0 +1,10 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="circulo_progresso">
+<circle id="fundo" cx="100" cy="100" r="90" fill="#320735"/>
+<circle id="contorno" cx="100" cy="100" r="69.5" stroke="#897D2E"/>
+<circle id="circ_progresso" cx="100" cy="100" r="80.5" stroke="#897D2E" stroke-width="9" stroke-dasharray="2 3"/>
+<circle id="circ_diferenca" cx="100" cy="100" r="80" stroke="#320735" stroke-opacity="0.8" stroke-width="10"/>
+<text id="rot_dados" fill="#897D2E" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="35" font-weight="600" letter-spacing="0em"><tspan x="62" y="103.727">00%</tspan></text>
+<text id="rot_cat" fill="white" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" font-weight="600" letter-spacing="0em"><tspan x="67" y="125.727">Perc. Meta</tspan></text>
+</g>
+</svg>

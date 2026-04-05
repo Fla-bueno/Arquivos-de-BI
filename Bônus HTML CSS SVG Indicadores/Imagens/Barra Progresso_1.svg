@@ -1,0 +1,14 @@
+<svg width="474" height="119" viewBox="0 0 474 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="barra_progresso">
+<rect width="474" height="119" fill="#40185A"/>
+<rect id="barra_fundo" x="37" y="48" width="400" height="15" fill="#5D4966"/>
+<rect id="progresso" x="37" y="48" width="311" height="15" fill="#558CA4"/>
+<g id="marcador">
+<rect id="quadro" x="7" y="8" width="60" height="30" rx="3" fill="#558CA4"/>
+<path id="triangulo" d="M37 45L28.3397 30L45.6603 30L37 45Z" fill="#558CA4"/>
+<text id="rot_dados" fill="white" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="18" letter-spacing="0em"><tspan x="24" y="29.6523">50%</tspan></text>
+</g>
+<text id="estouro" fill="white" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="36" letter-spacing="0em"><tspan x="419" y="69.3047">&#x1f4a5;</tspan></text>
+<text id="rot_categoria" fill="white" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="18" letter-spacing="0em"><tspan x="237" y="102.545">Porcentagem Meta</tspan></text>
+</g>
+</svg>

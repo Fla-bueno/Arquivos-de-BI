@@ -1,0 +1,15 @@
+<svg width="136" height="400" viewBox="0 0 136 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Termometro">
+
+<path id="estrutura" fill-rule="evenodd" clip-rule="evenodd" d="M60 9C48.9543 9 40 17.9543 40 29V289V298.16C22.341 305.876 10 323.497 10 344C10 371.614 32.3858 394 60 394C87.6142 394 110 371.614 110 344C110 323.497 97.659 305.876 80 298.16V289V29C80 17.9543 71.0457 9 60 9Z" fill="#543A62" fill-opacity="0.7"/>
+<path id="base_inferior" fill-rule="evenodd" clip-rule="evenodd" d="M65 298H55V308.354C38.0385 310.781 25 325.368 25 343C25 362.33 40.67 378 60 378C79.33 378 95 362.33 95 343C95 325.368 81.9615 310.781 65 308.354V298Z" fill="#558CA4"/>
+<path id="barra_fundo" d="M55 38C55 35.2386 57.2386 33 60 33V33C62.7614 33 65 35.2386 65 38V298H55V38Z" fill="#745584"/>
+<path id="progresso" d="M55 91C55 88.2386 57.2386 86 60 86V86C62.7614 86 65 88.2386 65 91V298H55V91Z" fill="#558CA4"/>
+<path id="linha" fill-rule="evenodd" clip-rule="evenodd" d="M73 87.6016H101.231V85.6016H73V87.6016ZM101.231 108.441H73V106.441H101.231V108.441ZM73 129.281H101.231V127.281H73V129.281ZM101.231 150.121H73V148.121H101.231V150.121ZM73 170.96H101.231V168.96H73V170.96ZM101.231 191.8H73V189.8H101.231V191.8ZM73 212.64H101.231V210.64H73V212.64ZM101.231 233.479H73V231.479H101.231V233.479ZM73 254.319H101.231V252.319H73V254.319ZM101.231 275.159H73V273.159H101.231V275.159ZM101.231 295.999H73V293.999H101.231V295.999Z" fill="#558CA4"/>
+<path id="marcador" d="M105 295L121.5 285.474V304.526L105 295Z" fill="#558CA4"/>
+<text id="rot_dados" fill="white" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="25" letter-spacing="0em"><tspan x="56.2822" y="351.045">50%</tspan></text>
+<g id="estouro">
+<text id='estouro' fill="black" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="36" letter-spacing="0em"><tspan x="42" y="48.48">&#x1f4a5;</tspan></text>
+</g>
+</g>
+</svg>

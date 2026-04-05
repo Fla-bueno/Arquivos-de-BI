@@ -1,0 +1,18 @@
+<svg width="318" height="75" viewBox="0 0 318 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Grafico Barras">
+<rect id="fundo" x="25.75" y="10.75" width="271.5" height="53.5" rx="6.25" fill="#40185A" stroke="url(#paint0_linear_3780_635)" stroke-width="1.5"/>
+<rect id="foto" x="11" y="24" width="28" height="28" fill="#D9D9D9"/>
+<text id="rot_cat" fill="white" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="9.81383" font-weight="500" letter-spacing="0em"><tspan x="51" y="25.5183">Nome</tspan></text>
+<text id="porcentagem" fill="white" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="9.81383" font-weight="600" letter-spacing="0em"><tspan x="263" y="25.5183">100%</tspan></text>
+<text id="detalhes" fill="white" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="10" font-weight="500" letter-spacing="0em"><tspan x="137.316" y="57.585">Total Vendido foi: R$ 00,00 mi</tspan></text>
+<rect id="barra_fundo" x="51" y="34" width="237" height="8" fill="#5E3E73"/>
+<rect id="barra_progresso" x="51" y="34" width="160" height="8" fill="#558CA4"/>
+<rect id="linha_meta" x="209" y="31" width="2" height="14" fill="#F1F1F1"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_3780_635" x1="25" y1="18.5" x2="33.5" y2="65" gradientUnits="userSpaceOnUse">
+<stop stop-color="#45245A"/>
+<stop offset="1" stop-color="#381151"/>
+</linearGradient>
+</defs>
+</svg>
