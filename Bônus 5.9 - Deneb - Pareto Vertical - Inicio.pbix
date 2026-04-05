@@ -1,0 +1,160 @@
+Barra progresso  = 
+
+VAR vPorcentagem = [Porcentagem Meta] 
+
+VAR vRot_dados = FORMAT( vPorcentagem, "0%" ) 
+
+VAR vProgresso = 
+-- Fator movimentacao = 400 (tamanho maximo da barra) 
+
+    IF(
+        vPorcentagem <= 1,
+        ROUND(  vPorcentagem * 400, 0 ),
+        400
+    )
+
+VAR vEstouro_visibilidade = 
+-- Estouro é um texto, então 36 e 0 representa o tamanho da fonte 
+    IF( 
+        vPorcentagem <= 1,
+        0,
+        36
+    )
+
+VAR vAnimacao = "on" 
+-- Opções on / off 
+
+-----------------------------------------
+-- FORMATAÇÕES 
+-----------------------------------------
+
+
+VAR vBarra_fundo_cor = "#5D4966"
+
+VAR vMeta_cor = 
+    SWITCH(
+        TRUE(),
+        vPorcentagem >= 1, "#59B7C8",
+        vPorcentagem >= 0.81, "#897D2E",
+        "#C54339"
+    )
+
+
+VAR vFonte = "Segoe UI" 
+
+VAR vRot_cat = "Atingimento de Meta"
+VAR vRot_cat_cor = "#f1f1f1"
+VAR vRot_cat_tam = 18
+
+VAR vRot_dados_cor = "#f1f1f1"
+VAR vRot_dados_tam = 18
+VAR vRot_dados_peso = 600
+
+
+VAR vPrefixo = "data:image/svg+xml,"
+
+RETURN 
+
+vPrefixo &
+
+
+"
+<svg  viewBox='0 0 474 119' fill='none' xmlns='http://www.w3.org/2000/svg'>
+	
+    <defs>
+        <style>
+
+            #marcador {
+                transform: translateX(" & vProgresso& "px);
+
+                " & if( vAnimacao = "on", "animation", BLANK() ) & ": anima_marcador .7s linear forwards
+            }
+
+            #progresso {
+                width: " & vProgresso & "px;
+
+                " & if( vAnimacao = "on", "animation", BLANK() ) & ": anima_barra .7s linear forwards
+            }
+
+            #estouro {
+                opacity: 1;
+                " & if( vAnimacao = "on", "animation", BLANK() ) & ": anima_estouro 1.7s linear forwards
+            }
+
+            /* ----------------- ANIMAÇÕES --------------- */
+
+
+            @keyframes anima_marcador {
+                
+                from {
+                    transform: translateX(0px)
+                }
+
+                to {
+                    transform: translateX(" & vProgresso& "px)
+                }
+
+            }
+
+             @keyframes anima_barra {
+                
+                from {
+                    width: 0
+                }
+
+                to {
+                     width: " & vProgresso & "px
+                }
+
+            }
+
+            @keyframes anima_estouro {
+                
+                from {
+                    opacity: 0
+                }
+
+                to {
+                     opacity: 1
+                }
+
+            }
+
+
+        </style>
+
+    </defs>
+    
+    <g id='barra_progresso'>
+		
+		<rect id='barra_fundo' x='37' y='48' width='400' height='15' fill='" & vBarra_fundo_cor & "'/>
+		
+        
+        <rect id='progresso' x='37' y='48' width='400' height='15' fill='" & vMeta_cor & "'/>
+		
+        
+        <g id='marcador'>
+			<rect id='quadro' x='7' y='8' width='60' height='30' rx='3' fill='" & vMeta_cor & "'/>
+			<path id='triangulo' d='M37 45L28.3397 30L45.6603 30L37 45Z' fill='" & vMeta_cor & "'/>
+			
+            
+            <text id='rot_dados' text-anchor='middle' fill='" & vRot_dados_cor & "'  font-family='" & vFonte & "' font-size='" & vRot_dados_tam& "' font-weight='" & vRot_dados_peso & "' >
+				<tspan x='38' y='29.6523'>  " & vRot_dados  & " </tspan>
+			</text>
+
+		</g>
+		
+        
+        <text id='estouro' fill='white'  font-family='" & vFonte & "' font-size='" & vEstouro_visibilidade & "' >
+			<tspan x='419' y='69.3047'> 💥  </tspan>
+		</text>
+
+
+		<text id='rot_categoria' text-anchor='middle' fill='" & vRot_cat_cor & "'  font-family='" & vFonte & "' font-size='" & vRot_cat_tam& "' >
+			<tspan x='237' y='102.545'>   " & vRot_cat & "   </tspan>
+		</text>
+
+        
+	</g>
+</svg>
+"

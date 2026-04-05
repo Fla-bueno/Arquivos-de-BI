@@ -1,0 +1,119 @@
+Velocimetro Animado = 
+
+
+VAR vPorcentagem = 1
+
+VAR vTexto = "Perc. Total"
+
+
+RETURN
+
+
+"
+
+<style>
+
+:root{
+
+    --marcador_principal_cor: #f1f1f1;
+
+
+    --marcador_maximo_cor: #3AB5C2;    
+    --circulo_central_cor: #3AB5C2;
+    --quadro_borda_cor: #3AB5C2;
+
+
+    --fonte: Segoe UI;
+    --rot_dados_cor: #3AB5C2;
+    --rot_dados_tam: 40;
+
+    --rot_cat_cor: #f1f1f1;
+    --rot_cat_tam: 15;
+
+    --seta_cor_1: #f1f1f1;
+    --seta_cor_2: #BEBEBE;
+
+}
+
+
+/*
+
+    100% .... 188
+
+    maximo ... 250 
+
+*/
+
+div{
+    overflow: hidden
+}
+
+#ponteiro
+{
+    transform: rotate(0deg);
+    transform-origin: center;
+    transform-box: fill-box;
+
+    animation: anima_ponteiro 1s linear forwards;
+}
+
+
+
+@keyframes anima_ponteiro
+{
+  
+    to{
+        transform: rotate(
+        " &
+        SWITCH(
+            TRUE(),
+            ROUND( vPorcentagem * 188, 0 ) < 0, 0,
+            ROUND( vPorcentagem * 188, 0 ) > 250, 250,
+            ROUND( vPorcentagem * 188, 0 )
+        )
+        &"deg);
+    }
+}
+
+</style>
+
+
+<body>
+    <svg viewBox='0 0 290 240' fill='none' xmlns='http://www.w3.org/2000/svg'>
+
+        <path id='marcadores_maximo' fill-rule='evenodd' clip-rule='evenodd' d='M99.0799 58.7593L93.5516 40.0268L88.8685 41.4089L94.3967 60.1414L99.0799 58.7593ZM108.543 36.8587L111.073 56.2255L106.232 56.8579L103.702 37.4912L108.543 36.8587ZM123.317 55.5946L123.848 36.0706L118.967 35.9378L118.436 55.4618L123.317 55.5946ZM139.084 37.6892L135.505 56.8898L130.705 55.9951L134.284 36.7945L139.084 37.6892ZM147.347 60.0729L153.885 41.6685L149.284 40.0339L142.746 58.4383L147.347 60.0729ZM167.877 47.9162L158.54 65.0712L154.252 62.737L163.588 45.582L167.877 47.9162ZM180.721 56.2746L168.816 71.7578L164.945 68.7814L176.85 53.2983L180.721 56.2746Z' fill='var(--marcador_maximo_cor)'/>
+
+        <path id='marcadores' fill-rule='evenodd' clip-rule='evenodd' d='M23.5703 131.039L43.0943 131.57L42.9615 136.451L23.4375 135.92L23.5703 131.039ZM44.3864 119.38L25.1858 115.801L24.2911 120.601L43.4917 124.18L44.3864 119.38ZM29.1683 101L47.5727 107.538L45.9381 112.139L27.5338 105.601L29.1683 101ZM52.5699 96.3486L35.4149 87.0118L33.0807 91.3005L50.2357 100.637L52.5699 96.3486ZM43.7729 74.1641L59.2561 86.0696L56.2797 89.9404L40.7965 78.0349L43.7729 74.1641ZM67.4703 76.9702L54.0401 62.7891L50.4949 66.1467L63.925 80.3277L67.4703 76.9702ZM65.9572 53.1524L77.0036 69.2598L72.9768 72.0214L61.9304 55.914L65.9572 53.1524ZM87.6288 63.145L79.2382 45.5079L74.8289 47.6055L83.2195 65.2426L87.6288 63.145ZM119.066 211.789L118.535 231.313L123.416 231.445L123.947 211.921L119.066 211.789ZM131.308 211.161L133.838 230.527L138.68 229.895L136.15 210.528L131.308 211.161ZM148.832 227.359L143.303 208.627L147.986 207.245L153.515 225.977L148.832 227.359ZM154.752 204.242L163.142 221.879L167.552 219.781L159.161 202.144L154.752 204.242ZM176.423 214.231L165.377 198.123L169.404 195.362L180.45 211.469L176.423 214.231ZM43.7227 143.814L24.356 146.344L24.9885 151.186L44.3552 148.656L43.7227 143.814ZM27.5279 161.336L46.2605 155.808L47.6425 160.491L28.91 166.019L27.5279 161.336ZM50.6411 167.254L33.004 175.645L35.1017 180.054L52.7388 171.663L50.6411 167.254ZM40.6524 188.922L56.7598 177.876L59.5214 181.902L43.414 192.949L40.6524 188.922ZM64.4656 187.414L50.2846 200.844L53.6421 204.389L67.8231 190.959L64.4656 187.414ZM61.6618 211.109L73.5673 195.626L77.4381 198.603L65.5326 214.086L61.6618 211.109ZM83.8428 202.314L74.506 219.469L78.7948 221.803L88.1316 204.648L83.8428 202.314ZM88.4983 225.715L95.0366 207.311L99.6377 208.945L93.0994 227.349L88.4983 225.715ZM106.876 210.495L103.297 229.695L108.098 230.59L111.676 211.389L106.876 210.495Z' fill='var(--marcador_principal_cor)'/>
+
+        <path id='linha_cem_porcento' d='M78.6133 47.3633L60.5469 40.0391H38.0859' stroke='var(--marcador_principal_cor)' stroke-width='0.976562'/>
+
+        <text id='cem_porcento' fill='var(--marcador_principal_cor)'  font-family='var(--fonte)' font-size='9.76562' font-weight='600' text-anchor='start'>
+            <tspan x='37.1094' y='37.8873'>100%</tspan>
+        </text>
+
+        <g id='ponteiro'>
+            <circle id='circulo_rotacionar' cx='121.73' cy='133.738' r='73.7305' fill='#D9D9D9' opacity='0'/>
+
+            <circle id='circulo_central' cx='121.741' cy='133.673' r='22.7785' fill='var(--circulo_central_cor)'/>
+
+            <path id='Subtract' fill-rule='evenodd' clip-rule='evenodd' d='M85.3638 110.316L163.229 190.96L161.986 188.627L103.43 108.121L103.259 108.51L85.3638 110.316Z' fill='var(--seta_cor_2)'/>
+
+            <path id='Subtract_2' fill-rule='evenodd' clip-rule='evenodd' d='M109.902 92.4457L163.437 190.938L161.586 189.051L102.383 109.018L102.805 108.972L109.902 92.4457Z' fill='var(--seta_cor_1)'/>
+        </g>
+
+        <rect id='quadro_borda' x='168.598' y='87.4023' width='114.258' height='94.7266' rx='13.1836' stroke='var(--quadro_borda_cor)' stroke-width='2.92969'/>
+
+        <text id='rot_dados' fill='var(--rot_dados_cor)'  font-family='var(--fonte)' font-size='var(--rot_dados_tam)' font-weight='bold' text-anchor='middle'>
+            <tspan x='225' y='138.738'>
+                " & FORMAT( vPorcentagem, "0%" )  & "
+            </tspan>
+        </text>
+
+        <text id='rot_categoria' fill='var(--rot_cat_cor)'  font-family='var(--fonte)' font-size='var(--rot_cat_tam)' text-anchor='middle'>
+            <tspan x='225' y='160'>" & vTexto & "</tspan>
+        </text>
+  
+  
+    </svg>
+</body>
+"

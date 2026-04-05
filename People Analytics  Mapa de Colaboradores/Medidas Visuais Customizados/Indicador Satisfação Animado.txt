@@ -1,0 +1,112 @@
+Indicador Satisfação Animado = 
+
+
+VAR vIndicador = 3
+
+
+RETURN 
+
+"
+
+
+<style>
+
+:root{
+
+    --barra_negativa: #E6003A;
+    --barra_neutra: #D7B12C;
+    --barra_positiva: #71AB34;
+
+    --fonte: Inter;
+
+    --numeros_cor: #f1f1f1;
+
+    --rot_dados_cor: #F1F1F1;
+    --rot_dados_tam: 20;
+
+    --ponteiro_cor: #f1f1f1;
+    --ponteiro_borda_cor: #000;
+    
+
+}
+
+
+
+#marcador{
+    transform: translate(0px);
+
+    animation: anima_marcador 1s linear forwards;
+}
+
+
+@keyframes anima_marcador
+{
+    to{
+    transform: translate("&
+    SWITCH(
+        TRUE(),
+         ROUND( (vIndicador * 267) / 5, 0) > 267, 267,
+         ROUND( (vIndicador * 267) / 5, 0) < 0, 0,
+         ROUND( (vIndicador * 267) / 5, 0)
+    )
+    &"px);
+
+    }
+}
+
+/*
+    Calculo ( 267 * Valor  ) / 5 
+*/
+
+
+</style>
+
+
+<body>
+    
+    <svg viewBox='0 0 309 85' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    
+
+
+        <rect id='barra_vermelha' x='21.2057' y='37' width='266.839' height='22' fill='var(--barra_negativa)'/>
+
+        <rect id='barra_amarela' x='182' y='37' width='100' height='22' fill='var(--barra_neutra)'/>
+
+        <rect id='barra_verde' x='237' y='37' width='51' height='22' fill='var(--barra_positiva)'/>
+
+
+        <g id='marcador'>
+            <path id='ponteiro' d='M34.908 27.505L21.4266 50.8555L7.94524 27.505L34.908 27.505Z' fill='var(--ponteiro_cor)' stroke='var(--ponteiro_borda_cor)'/>
+
+            <text id='rot_dados' fill='var(--rot_dados_cor)' font-family='var(--fonte)' font-size='var(--rot_dados_tam)' font-weight='600' text-anchor='middle' >
+                <tspan x='21' y='23.0423'>
+                    " & FORMAT( vIndicador, "0.0" ) & "
+                </tspan>
+            </text>
+        </g>
+        <g id='numeros'>
+            <text id='0' fill='var(--numeros_cor)' font-family='var(--fonte)' font-size='20' font-weight='600' >
+                <tspan x='13.8301' y='77.2727'>0</tspan>
+            </text>
+            <text id='1' fill='var(--numeros_cor)' font-family='var(--fonte)' font-size='20' font-weight='600' >
+                <tspan x='68.6953' y='77.2727'>1</tspan>
+            </text>
+            <text id='2' fill='var(--numeros_cor)' font-family='var(--fonte)' font-size='20' font-weight='600' >
+                <tspan x='123' y='77.2727'>2</tspan>
+            </text>
+            <text id='3' fill='var(--numeros_cor)' font-family='var(--fonte)' font-size='20' font-weight='600' >
+                <tspan x='176' y='77.2727'>3</tspan>
+            </text>
+            <text id='4' fill='var(--numeros_cor)' font-family='var(--fonte)' font-size='20' font-weight='600' >
+                <tspan x='229' y='77.2727'>4</tspan>
+            </text>
+            <text id='5' fill='var(--numeros_cor)' font-family='var(--fonte)' font-size='20' font-weight='600' >
+                <tspan x='283' y='77.2727'>5</tspan>
+            </text>
+        </g>
+   
+    </svg>
+
+
+</body>
+"
