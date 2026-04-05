@@ -1,0 +1,74 @@
+HTML Insights Manuseio =
+VAR vCliente        = [Cliente Ativo Nome]
+VAR vSetor          = [Cliente Ativo Setor]
+VAR vHistorico      = [Cliente Ativo Historico]
+VAR vFundacao       = [Cliente Ativo Fundacao]
+VAR vLogo           = [Cliente Ativo LogoURL]
+VAR vCor            = [Cliente Ativo CorPrimaria]
+VAR vCor2           = [Cliente Ativo CorSecundaria]
+
+VAR vOCT            = FORMAT([OCT Total (dias úteis)], "0.0") & " dias"
+VAR vRealizados     = FORMAT([Realizados], "#,##0")
+VAR vEntregues      = FORMAT([Entregues], "#,##0")
+VAR vAbertos        = FORMAT([OCT Abertos], "#,##0")
+VAR vTempManu       = FORMAT([Tempo Médio Manuseio Min], "#,##0.0") & " min"
+VAR vVolumes        = FORMAT([Total Volumes Manuseados], "#,##0")
+VAR vSKUs           = FORMAT([Total SKUs Manuseados], "#,##0")
+VAR vQuarentena     = FORMAT([Taxa de Quarentena %], "0.0%")
+VAR vDespachados    = FORMAT([% Pedidos Despachados], "0.0%")
+
+VAR vCicloMin = AVERAGEX(
+    FILTER(
+        'Relatório de Manuseio',
+        NOT ISBLANK('Relatório de Manuseio'[Data / Hora Despachado])
+            && NOT ISBLANK('Relatório de Manuseio'[Data Pedido])
+    ),
+    DATEDIFF(
+        'Relatório de Manuseio'[Data Pedido],
+        'Relatório de Manuseio'[Data / Hora Despachado],
+        MINUTE
+    )
+)
+VAR vCicloH = INT(vCicloMin / 60)
+VAR vCicloM = INT(MOD(vCicloMin, 60))
+VAR vCiclo  = FORMAT(vCicloH, "00") & ":" & FORMAT(vCicloM, "00") & "h"
+
+VAR FLOW_URL = "COLE_AQUI_A_URL_DO_SEU_FLUXO_POWER_AUTOMATE"
+
+VAR CONTEXT_RAW = "Cliente: " & vCliente & ". Setor: " & vSetor & ". Fundado em: " & vFundacao & ". Histórico: " & vHistorico & ". --- Dados operacionais Postall para este cliente: OCT Total: " & vOCT & ". Realizados: " & vRealizados & ". Entregues: " & vEntregues & ". Abertos: " & vAbertos & ". Tempo Médio Manuseio: " & vTempManu & ". Volumes: " & vVolumes & ". SKUs: " & vSKUs & ". Quarentena: " & vQuarentena & ". Despachados: " & vDespachados & ". Ciclo Completo: " & vCiclo & "."
+VAR CONTEXT_SAFE = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(CONTEXT_RAW,"'","&#39;"),"<","&lt;"),">","&gt;"),"""","&quot;")
+
+VAR p1 = "<!DOCTYPE html><html lang='pt-BR'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1.0'><link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap' rel='stylesheet'><style>:root{--cor:" & vCor & ";--cor2:" & vCor2 & ";--border:rgba(255,255,255,0.15);--muted:rgba(255,255,255,0.60);}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}body{background:linear-gradient(135deg," & vCor2 & "cc 0%,#0d1f3c 40%,#0d1f3c 100%);color:#f5f5f5;font-family:'Inter',sans-serif;min-height:100vh;padding:20px 24px 40px;}.shell{position:relative;max-width:100%;}header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;gap:16px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--border);}.logo-wrap{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;background:#fff;border:2px solid " & vCor & ";padding:4px;}.logo-wrap img{width:40px;height:40px;object-fit:contain;}.logo-fallback{width:40px;height:40px;border-radius:50%;background:" & vCor & ";display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;letter-spacing:-1px;}.eyebrow{font-size:9px;letter-spacing:.25em;color:" & vCor & ";text-transform:uppercase;font-weight:700;margin-bottom:2px;}.page-title{font-size:18px;font-weight:800;letter-spacing:-.02em;color:#f5f5f5;}.page-title span{color:" & vCor & ";}.badge{background:" & vCor & "33;border:1px solid " & vCor & "66;border-radius:999px;padding:3px 12px;font-size:10px;font-weight:700;color:#f5f5f5;}.ts{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:4px;}"
+
+VAR p2 = ".hist-card{background:" & vCor & "18;border:1px solid " & vCor & "44;border-radius:12px;padding:16px 18px;margin-bottom:16px;border-left:3px solid " & vCor & ";}.hist-label{font-size:9px;font-weight:700;letter-spacing:.2em;color:" & vCor & ";text-transform:uppercase;margin-bottom:6px;}.hist-text{font-size:12px;line-height:1.7;color:rgba(255,255,255,0.85);}.hist-pills{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}.hist-pill{font-size:10px;padding:3px 10px;border-radius:20px;background:" & vCor & "22;border:1px solid " & vCor & "55;color:rgba(255,255,255,.85);font-weight:500;}.kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;}.kpi-card{background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:10px;padding:12px 14px;position:relative;overflow:hidden;}.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--al," & vCor & ");pointer-events:none;}.kpi-label{font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:5px;}.kpi-value{font-size:18px;font-weight:800;letter-spacing:-.02em;line-height:1;color:#f5f5f5;}.kpi-sub{margin-top:5px;font-size:10px;color:var(--muted);}"
+
+VAR p3 = ".insight-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:18px;}.i-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;}.i-icon{width:32px;height:32px;border-radius:8px;background:" & vCor & "33;display:flex;align-items:center;justify-content:center;font-size:14px;border:1px solid " & vCor & "66;}.i-title{font-size:13px;font-weight:700;color:#f5f5f5;}.i-sub{font-size:10px;color:var(--muted);margin-top:1px;}.chips{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;}.chip{padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);font-size:10px;cursor:pointer;color:rgba(255,255,255,.8);font-weight:600;transition:all .15s;user-select:none;}.chip:hover{background:" & vCor & "33;border-color:" & vCor & ";}.chip.active{background:" & vCor & "44;border-color:" & vCor & ";color:#fff;}.output{background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:10px;padding:14px;min-height:70px;font-size:12px;line-height:1.8;position:relative;color:#f5f5f5;word-break:break-word;}.output h2{font-size:13px;font-weight:700;margin:10px 0 5px;color:" & vCor & ";}.output h3{font-size:12px;font-weight:700;color:" & vCor & ";margin:8px 0 3px;}.output p{margin:3px 0;}.output ul{margin:3px 0 6px 14px;}.output li{margin:2px 0;}.output strong{color:#fff;font-weight:700;}.output.loading::after{content:'';position:absolute;bottom:10px;right:10px;width:12px;height:12px;border-radius:50%;border:2px solid rgba(255,255,255,.2);border-top-color:" & vCor & ";animation:spin .7s linear infinite;}@keyframes spin{to{transform:rotate(360deg);}}.err{background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.4);border-radius:6px;padding:8px 12px;font-size:10px;color:#fca5a5;margin-top:6px;word-break:break-all;display:none;}.ask-row{display:flex;gap:6px;margin-top:8px;}.ask-input{flex:1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:8px 12px;color:#fff;font-family:'Inter',sans-serif;font-size:12px;outline:none;}.ask-input:focus{border-color:" & vCor & ";background:rgba(255,255,255,.15);}.ask-btn{background:" & vCor & ";border:none;border-radius:8px;padding:8px 14px;color:#fff;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;cursor:pointer;}.ask-btn:hover{opacity:.85;}</style></head><body><div class='shell'>"
+
+VAR vInitials = LEFT(vCliente, 1) & MID(vCliente, FIND(" ", vCliente & " ") + 1, 1)
+
+VAR p4 = "<header><div style='display:flex;align-items:center;gap:12px'><div class='logo-wrap'><img src='" & vLogo & "' alt='" & vCliente & "' id='logoImg' onload='document.getElementById(""fb"").style.display=""none""' onerror='this.style.display=""none"";document.getElementById(""fb"").style.display=""flex""'><div class='logo-fallback' id='fb' style='display:none'>" & vInitials & "</div></div><div><div class='eyebrow'>Grupo Postall &middot; An&aacute;lise Operacional</div><div class='page-title'>Insights <span>" & vCliente & "</span></div></div></div><div style='text-align:right'><div class='badge'>" & vSetor & "</div><div class='ts' id='ts'></div></div></header>"
+
+VAR p5 = "<div class='hist-card'><div class='hist-label'>Perfil do Cliente</div><div class='hist-text'>" & vHistorico & "</div><div class='hist-pills'><span class='hist-pill'>&#128197; Fundado em " & vFundacao & "</span><span class='hist-pill'>" & vSetor & "</span></div></div>"
+
+VAR p6 = "<div class='kpi-strip'><div class='kpi-card' style='--al:#38bdf8'><div class='kpi-label'>OCT Total</div><div class='kpi-value'>" & vOCT & "</div><div class='kpi-sub'>ciclo m&eacute;dio</div></div><div class='kpi-card' style='--al:#34d399'><div class='kpi-label'>Realizados</div><div class='kpi-value'>" & vRealizados & "</div><div class='kpi-sub'>" & vEntregues & " entregues</div></div><div class='kpi-card' style='--al:#f87171'><div class='kpi-label'>Abertos</div><div class='kpi-value'>" & vAbertos & "</div><div class='kpi-sub'>em andamento</div></div><div class='kpi-card' style='--al:#fbbf24'><div class='kpi-label'>Tempo Manuseio</div><div class='kpi-value'>" & vTempManu & "</div><div class='kpi-sub'>m&eacute;dia por pedido</div></div><div class='kpi-card' style='--al:#a78bfa'><div class='kpi-label'>Volumes</div><div class='kpi-value'>" & vVolumes & "</div><div class='kpi-sub'>" & vSKUs & " SKUs</div></div><div class='kpi-card' style='--al:#fb923c'><div class='kpi-label'>Quarentena</div><div class='kpi-value'>" & vQuarentena & "</div><div class='kpi-sub'>" & vDespachados & " despachados</div></div></div>"
+
+VAR p7 = "<div class='insight-card'><div class='i-header'><div class='i-icon'>&#10022;</div><div><div class='i-title'>An&aacute;lise Inteligente &mdash; " & vCliente & "</div><div class='i-sub'>Selecione um tema ou fa&ccedil;a sua pr&oacute;pria pergunta</div></div></div><div class='chips' id='chips'><div class='chip active' data-key='resumo'>&#128202; Resumo</div><div class='chip' data-key='manuseio'>&#9881; Manuseio</div><div class='chip' data-key='ciclo'>&#128260; Ciclo</div><div class='chip' data-key='quarentena'>&#9888; Quarentena</div><div class='chip' data-key='prospeccao'>&#127919; Prospec&ccedil;&atilde;o</div><div class='chip' data-key='alerta'>&#128680; Alertas</div></div><div class='output' id='out'>Clique em um tema acima para iniciar a an&aacute;lise.</div><div id='errbox' class='err'></div><div class='ask-row'><input class='ask-input' id='inp' type='text' placeholder='Ex: Quais os maiores gargalos nessa opera&ccedil;&atilde;o?' /><button class='ask-btn' id='askBtn'>Perguntar</button></div></div></div>"
+
+VAR p8 =
+"<" & "script>" &
+"var CONTEXT='" & CONTEXT_SAFE & "';" &
+"var FLOW_URL='" & FLOW_URL & "';" &
+"var PRESETS={resumo:'Faça um resumo executivo da operação de manuseio para o cliente " & vCliente & ", destacando os principais indicadores e pontos de atenção.',manuseio:'Analise o tempo médio de manuseio e o volume de SKUs para " & vCliente & ". Identifique oportunidades de ganho de eficiência.',ciclo:'Analise o ciclo completo do pedido para " & vCliente & ". Identifique em quais etapas há maior oportunidade de redução de tempo.',quarentena:'Analise a taxa de quarentena e o percentual de pedidos despachados para " & vCliente & ". Sugira ações para reduzir os pedidos em quarentena.',prospeccao:'Com base no perfil de " & vCliente & " e nos dados operacionais da Postall, elabore um argumento de prospecção comercial destacando os diferenciais da Postall para este cliente.',alerta:'Identifique os 3 principais alertas críticos na operação para " & vCliente & " e sugira ações imediatas.'};" &
+"document.getElementById('ts').textContent='Atualizado em '+new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});" &
+"function showErr(msg){var b=document.getElementById('errbox');b.textContent=msg;b.style.display='block';}" &
+"function hideErr(){document.getElementById('errbox').style.display='none';}" &
+"function renderText(text,el){el.classList.remove('loading');var lines=text.split('\n');var html='';for(var i=0;i<lines.length;i++){var line=lines[i];if(line.startsWith('### ')){html+='<h3>'+line.slice(4)+'</h3>';}else if(line.startsWith('## ')){html+='<h2>'+line.slice(3)+'</h2>';}else if(line.startsWith('# ')){html+='<h2>'+line.slice(2)+'</h2>';}else if(line.startsWith('- ')||line.startsWith('* ')){html+='<li>'+line.slice(2)+'</li>';}else if(line.trim()===''){html+='<br>';}else{html+='<p>'+line+'</p>';}}html=html.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/\*([^*]+)\*/g,'<em>$1</em>');el.innerHTML=html;}" &
+"async function callFlow(prompt){hideErr();var ctrl=new AbortController();var tid=setTimeout(function(){ctrl.abort();},60000);try{var r=await fetch(FLOW_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:String(prompt),context:String(CONTEXT)}),signal:ctrl.signal});clearTimeout(tid);if(!r.ok)throw new Error('HTTP '+r.status);var d=await r.json();return d.Resposta||d.answer||d.output||d.response||Object.values(d).find(function(v){return typeof v==='string'&&v.length>30;})||'Sem resposta.';}catch(e){clearTimeout(tid);throw new Error(e.name==='AbortError'?'Timeout 60s.':e.message);}}" &
+"async function runChip(chip,key){document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});chip.classList.add('active');var out=document.getElementById('out');out.innerHTML='';out.classList.add('loading');hideErr();try{renderText(await callFlow(PRESETS[key]),out);}catch(e){out.classList.remove('loading');out.textContent='Erro ao obter resposta.';showErr(e.message);}}" &
+"async function runFree(){var inp=document.getElementById('inp'),q=inp.value.trim();if(!q){inp.focus();return;}document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});var out=document.getElementById('out');out.innerHTML='';out.classList.add('loading');hideErr();inp.value='';try{renderText(await callFlow(q),out);}catch(e){out.classList.remove('loading');out.textContent='Erro ao obter resposta.';showErr(e.message);}}" &
+"document.getElementById('chips').addEventListener('click',function(e){var chip=e.target.closest('.chip');if(chip&&chip.dataset.key){runChip(chip,chip.dataset.key);}});" &
+"document.getElementById('askBtn').addEventListener('click',runFree);" &
+"document.getElementById('inp').addEventListener('keydown',function(e){if(e.key==='Enter')runFree();});" &
+"<" & "/script></body></html>"
+
+RETURN p1 & p2 & p3 & p4 & p5 & p6 & p7 & p8
