@@ -1,0 +1,513 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.5.1.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.6.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Grafico Gradiente com Destaque do maior e menor com bordas",
+      "description": "[No Description Provided]",
+      "author": "Jefferson Alves - Dados Criativos",
+      "uuid": "53ace8d6-b04b-4af4-8ad8-c66127c24372",
+      "generated": "2023-08-09T22:43:47.260Z",
+      "previewImageBase64PNG": "data:image/png;base64,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"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Categia",
+        "description": "Coluna que será o eixo x\"",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Maior Valor",
+        "description": "Quando estiver no contexto do MAIOR VALOR, será necessário retornar a string \"s\" . Cálculo deve ser feito via DAX",
+        "type": "text",
+        "kind": "measure"
+      },
+      {
+        "key": "__2__",
+        "name": "Menor Valor",
+        "description": "Quando estiver no contexto do MENOR VALOR , será necessário retornar a string \"s\" . Cálculo deve ser feito via DAX ",
+        "type": "text",
+        "kind": "measure"
+      },
+      {
+        "key": "__3__",
+        "name": "Medida",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__4__",
+        "name": "Medida Valor Formatado",
+        "description": "FORMATO DE TEXTO, de como os valores serão exibidos no gráfico ",
+        "type": "text",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+
+
+    "area": {
+      "color": {
+        "x1": 0,
+        "x2": 0,
+        "y1": 1,
+        "y2": 0,
+        "gradient": "linear",
+        "stops": [
+          {
+            "offset": 0,
+            "color": "rgba(3, 49, 87,  0)"
+          },
+          {
+            "offset": 0.15,
+            "color": "rgba(33, 49, 87,  0.03)"
+          },
+          {
+            "offset": 0.3,
+            "color": "rgba(3, 49, 87, 0.1)"
+          },
+          {
+            "offset": 1,
+            "color": "rgba(3, 49, 87,  0.5)"
+          }
+        ]
+      }
+    },
+
+
+    
+
+
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelAngle": 0,
+      "labelFontWeight": 400,
+      "labelFontSize": 10,
+      "labelColor": "#383838",
+      "title": null
+    },
+
+
+   "font": "segoe ui",
+
+    "text": {
+      "fontSize": 8,
+      "fontWeight": 400,
+      "color": "#033157",
+      "limit": 110,
+      "dy": -6
+    },
+
+
+    "padding": {
+      "top": 30,
+      "left": 10,
+      "right": 10,
+      "bottom": 5
+    },
+    "line": {
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10}
+  },
+  "data": {"name": "dataset"},
+
+
+
+
+
+
+
+
+
+
+"params": [
+    { "name": "linha_cor",  "value": "#033157" },
+    { "name": "linha_espessura",   "value": 3  },
+
+
+
+    { "name": "rotulos_menor_tam", "value": 20 },
+    { "name": "rotulos_menor_cor", "value": "#BF5064" },
+    { "name": "rotulos_menor_peso", "value": 600  },
+    { "name": "rotulos_menor_posicao", "value": -75 },
+
+    { "name": "rotulos_exp_menor_tam","value": 12 },
+    { "name": "rotulos_exp_menor_cor", "value": "#383838" },
+    { "name": "rotulos_exp_menor_peso", "value": 500 },
+    { "name": "rotulos_exp_menor_posicao","value": -58  },
+
+
+    { "name": "rotulos_maior_tam", "value": 20 },
+    { "name": "rotulos_maior_cor", "value": "#26969F" },
+    { "name": "rotulos_maior_peso", "value": 600 },
+    { "name": "rotulos_maior_posicao", "value": -75 },
+
+    { "name": "rotulos_exp_maior_tam", "value": 12 },
+    { "name": "rotulos_exp_maior_cor", "value": "#383838" },
+    { "name": "rotulos_exp_maior_peso", "value": 500 },
+    { "name": "rotulos_exp_maior_posicao","value": -55 },
+    
+    
+    { "name": "quadro_alt","value": 65 },
+    { "name": "quadro_larg","value": 100 },
+    { "name": "quadro_cantos","value": 5 },
+    
+    
+    { "name": "quadro_menor_pos","value": -70 },
+    { "name": "quadro_menor_linha_tam","value": 37 },
+    { "name": "quadro_menor_cor_borda", "value": "red" }, 
+    
+    
+    { "name": "quadro_maior_pos","value": -69},
+    { "name": "quadro_maior_linha_tam","value": 35 },
+    { "name": "quadro_maior_cor_borda", "value": "green" }
+
+],
+  
+
+
+
+
+
+
+
+
+
+
+  "encoding": {
+    "x": {
+      "type": "nominal",
+      "field": "__0__",
+      "sort": ["jan"]
+    },
+    "y": {
+      "type": "quantitative",
+      "field": "__3__",
+      "axis": null
+    },
+    "opacity": {
+      "condition": {
+        "test": "datum['__selected__'] == 'off' ",
+        "value": 0.3
+      },
+      "value": 1
+    }
+  },
+  "layer": [
+    {
+      "description": " *****************  ÁREA   **************** ",
+      "mark": {
+        "type": "area",
+        "interpolate": "natural",
+        "line": {
+          "stroke": {
+            "expr": "linha_cor"
+          },
+          "strokeWidth": {
+            "expr": "linha_espessura"
+          },
+          "strokeCap": "round",
+          "strokeDash": [0, 0]
+        }
+      },
+      "encoding": {
+        "tooltip": [
+          {"field": "__0__"},
+          {"field": "__3__"}
+        ]
+      }
+    },
+    {
+      "description": " *****************  QUADRO MAIOR   **************** ",
+      "transform": [
+        {
+          "filter": " datum['__1__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "width": {
+          "expr": "quadro_larg"
+        },
+        "height": {
+          "expr": "quadro_alt"
+        },
+        "yOffset": {
+          "expr": "quadro_maior_pos"
+        },
+        "xOffset": 2,
+        "cornerRadius": {
+          "expr": "quadro_cantos"
+        },
+        "stroke": {
+          "expr": "quadro_maior_cor_borda"
+        },
+        "strokeWidth": 2,
+        "fill": "transparent"
+      }
+    },
+    {
+      "description": " *****************  LINHA QUADRO MAIOR   **************** ",
+      "transform": [
+        {
+          "filter": " datum['__1__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "width": 1,
+        "height": {
+          "expr": " quadro_maior_linha_tam"
+        },
+        "yOffset": 0,
+        "baseline": "bottom",
+        "cornerRadius": 5,
+        "stroke": {
+          "expr": "rotulos_maior_cor"
+        },
+        "strokeWidth": 0.3
+      }
+    },
+    {
+      "description": " ************* RÓTULO DESTAQUE MAIOR VALOR ************** ",
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "limit": 0,
+        "align": "center",
+        "dx": 3,
+        "baseline": "bottom",
+        "angle": 0,
+        "dy": {
+          "expr": "rotulos_maior_posicao"
+        },
+        "fontSize": {
+          "expr": "rotulos_maior_tam"
+        },
+        "fontWeight": {
+          "expr": "rotulos_maior_peso"
+        },
+        "color": {
+          "expr": "rotulos_maior_cor"
+        }
+      },
+      "encoding": {
+        "text": {"field": "__4__"}
+      }
+    },
+    {
+      "description": " *********** RÓTULOS EXPLICATIVO MAIOR  ********** ",
+      "transform": [
+        {
+          "calculate": " datum['__0__'] + '-foi o melhor mês'",
+          "as": "_texto"
+        },
+        {
+          "filter": "datum['__1__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "lineBreak": "-",
+        "limit": 0,
+        "align": "center",
+        "dx": 3,
+        "baseline": "bottom",
+        "dy": {
+          "expr": "rotulos_exp_maior_posicao"
+        },
+        "angle": 0,
+        "font": "Segoe UI",
+        "fontSize": {
+          "expr": "rotulos_exp_maior_tam"
+        },
+        "fontWeight": {
+          "expr": "rotulos_exp_maior_peso"
+        },
+        "color": {
+          "expr": "rotulos_exp_maior_cor"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "_texto",
+          "type": "nominal",
+          "format": "#,#",
+          "formatType": "pbiFormat"
+        }
+      }
+    },
+    {
+      "description": " *****************  QUADRO MENOR   **************** ",
+      "transform": [
+        {
+          "filter": " datum['__2__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "width": {
+          "expr": "quadro_larg"
+        },
+        "height": {
+          "expr": "quadro_alt"
+        },
+        "yOffset": {
+          "expr": "quadro_menor_pos"
+        },
+        "xOffset": 2,
+        "cornerRadius": {
+          "expr": "quadro_cantos"
+        },
+        "stroke": {
+          "expr": "quadro_menor_cor_borda"
+        },
+        "strokeWidth": 2,
+        "fill": "transparent"
+      }
+    },
+    {
+      "description": " *****************  LINHA QUADRO MENOR   **************** ",
+      "transform": [
+        {
+          "filter": " datum['__2__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "width": 1,
+        "height": {
+          "expr": "quadro_menor_linha_tam"
+        },
+        "yOffset": 0,
+        "baseline": "bottom",
+        "cornerRadius": 5,
+        "stroke": {
+          "expr": "rotulos_menor_cor"
+        },
+        "strokeWidth": 0.3
+      }
+    },
+    {
+      "description": " ************* RÓTULO DESTAQUE MENOR VALOR ************** ",
+      "transform": [
+        {
+          "filter": "datum['__2__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "limit": 0,
+        "align": "center",
+        "dx": 3,
+        "baseline": "bottom",
+        "angle": 0,
+        "dy": {
+          "expr": "rotulos_menor_posicao"
+        },
+        "fontSize": {
+          "expr": "rotulos_menor_tam"
+        },
+        "fontWeight": {
+          "expr": "rotulos_menor_peso"
+        },
+        "color": {
+          "expr": "rotulos_menor_cor"
+        }
+      },
+      "encoding": {
+        "text": {"field": "__4__"}
+      }
+    },
+    {
+      "description": " *********** RÓTULOS EXPLICATIVO MENOR********** ",
+      "transform": [
+        {
+          "calculate": " datum['__0__'] + '-foi o pior mês'",
+          "as": "_texto"
+        },
+        {
+          "filter": "datum['__2__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "lineBreak": "-",
+        "limit": 0,
+        "align": "center",
+        "dx": 3,
+        "baseline": "bottom",
+        "dy": {
+          "expr": "rotulos_exp_menor_posicao"
+        },
+        "angle": 0,
+        "font": "Segoe UI",
+        "fontSize": {
+          "expr": "rotulos_exp_menor_tam"
+        },
+        "fontWeight": {
+          "expr": "rotulos_exp_menor_peso"
+        },
+        "color": {
+          "expr": "rotulos_exp_menor_cor"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "_texto",
+          "type": "nominal",
+          "format": "#,#",
+          "formatType": "pbiFormat"
+        }
+      }
+    },
+    {
+      "description": " *****************  RÓT. DADOS   **************** ",
+      "transform": [
+        {
+          "filter": " datum['__1__'] == null "
+        },
+        {
+          "filter": " datum['__2__'] == null "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dx": 0,
+        "baseline": "bottom",
+        "angle": 0
+      },
+      "encoding": {
+        "text": {"field": "__4__"}
+      }
+    }
+  ]
+}
