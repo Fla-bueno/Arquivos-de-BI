@@ -1,0 +1,328 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "information": {
+      "uuid": "bb3ee09e-ecab-439b-ba1d-e21b5bdcabf4",
+      "generated": "2024-08-24T18:55:50.105Z",
+      "previewImageBase64PNG": "data:image/png;base64,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",
+      "name": "Pareto Vertical - Classificação ABC e Formatação Condicional",
+      "description": "Criado por Jefferson Alves, do Dados Criativos, e proibida a comercialização sem a devida autorização.",
+      "author": "Jefferson Alves "
+    },
+    "deneb": {
+      "build": "1.7.1.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.20.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "selectionMode": "simple",
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "config": "{\n  \"view\": {\n    \"stroke\": \"transparent\"\n  },\n\n  \"padding\": {\n    \"top\": 0,\n    \"left\": 10,\n    \"bottom\": -15,\n    \"right\": 15\n  },\n\n  \"axis\": {\n    \"ticks\": false,\n    \"grid\": false,\n    \"domain\": false\n  },\n  \n  \"axisQuantitative\": {\n    \"tickCount\": 3,\n    \"grid\": true,\n    \"gridColor\": \"#C8C6C4\",\n    \"gridDash\": [\n      1,\n      5\n    ],\n    \"labelFlush\": false\n  },\n  \"axisX\": {\n    \"labelPadding\": 5\n  }\n}",
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Eixo y",
+        "description": "Coluna que será o Eixo Y",
+        "kind": "column",
+        "type": "text"
+      },
+      {
+        "key": "__1__",
+        "name": "Valor",
+        "description": "Medida Principal para criação do Pareto ",
+        "kind": "measure",
+        "type": "numeric"
+      },
+      {
+        "key": "__2__",
+        "name": "Percentual",
+        "description": "",
+        "kind": "measure",
+        "type": "numeric"
+      },
+      {
+        "key": "__3__",
+        "name": "Destaque",
+        "description": "Medida retorna um valor de destaque com base no parâmetro selecionado. O objetivo é garantir que o valor 1 seja atribuído quando a condição do parâmetro for atendida, destacando assim a métrica desejada.",
+        "kind": "measure",
+        "type": "numeric"
+      },
+      {
+        "key": "__4__",
+        "name": "Classificação ABC",
+        "description": "Medida é responsável por retornar os valores correspondentes às classes ABC",
+        "kind": "measure",
+        "type": "text"
+      },
+      {
+        "key": "__5__",
+        "name": "Formatacao Concicional ABC",
+        "description": "Medida aplica cores às barras com base em suas respectivas classificações, conforme os critérios estabelecidos.",
+        "kind": "measure",
+        "type": "text"
+      },
+      {
+        "key": "__6__",
+        "name": "Rotulos Categoria e Dados",
+        "description": "Medida é responsável por apresentar a categoria inserida no eixo Y, juntamente com seu respectivo valor",
+        "kind": "measure",
+        "type": "text"
+      }
+    ]
+  },
+  "data": {
+    "name": "dataset"
+  },
+  "height": {
+    "step": 50
+  },
+
+
+
+
+
+
+
+
+  "params": [
+
+    { "name": "_linhaCor", "value": "#213951"},
+    { "name": "_linhaLargura", "value": 2 },
+
+    { "name": "_marcadorTam", "value": 50 },
+    { "name": "_marcadorCor", "value": "#ffffff"  },
+
+
+    { "name": "_barraAltura", "value": 0.7 },
+    { "name": "_barraCantos", "value": 3 },
+
+
+    { "name": "_fonte", "value": "Segoe Ui" },
+
+    { "name": "_rotClasseTam", "value": 11 },
+    { "name": "_rotClassePeso", "value": 600 },
+
+    { "name": "_rotCatTam", "value": 10 },
+    { "name": "_rotCatCor", "value": "#213951" },
+    { "name": "_rotCatPeso", "value": 500 },
+    { "name": "_rotCatPosicao", "value": -12  },
+
+    { "name": "_rotLinTam", "value": 10 },
+    { "name": "_rotLinCor", "value": "#213951" },
+    { "name": "_rotLinPeso", "value": 700 },
+
+    { "name": "_rotLinTamDestaque", "value": 13 },
+    { "name": "_rotLinCorDestaque", "value": "#CDB0A2" }
+
+
+  ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "encoding": {
+    "x": {
+      "field": "__1__",
+      "type": "quantitative",
+      "axis": null
+    },
+    "y": {
+      "field": "__0__",
+      "type": "nominal",
+      "sort": {
+        "field": "__1__",
+        "order": "descending"
+      },
+      "axis": {
+        "title": null,
+        "labelAlign": "left",
+        "zindex": 1,
+        "labelBaseline": "line-bottom",
+        "labelLineHeight": 30,
+        "labelExpr": "datum.value",
+        "labelFontSize": 0,
+        "labelPadding": 10
+      },
+      "scale": {
+        "padding": 0.3
+      }
+    },
+    "opacity": {
+      "condition": {
+        "test": " datum['__selected__'] === 'off' ",
+        "value": 0.3
+      },
+      "value": 1
+    },
+    "tooltip":[
+      { "field": "Subcategoria"},
+      { "field": "Faturamento"},
+      { "field": "002 Percentual"}
+    ]
+  },
+  "resolve": {
+    "scale": {
+      "x": "independent"
+    }
+  },
+  "layer": [
+    // ---------------- Barra ---------------
+    {
+      "mark": {
+        "type": "bar",
+        "height": {
+          "expr": " bandwidth('y') * _barraAltura "
+        },
+        "cornerRadius": {
+          "expr": "_barraCantos"
+        },
+        "fill": {
+          "expr": " datum['__5__'] "
+        }
+      }
+    },
+    // ---- Rotulo Categoria e Dados  --------
+    {
+      "mark": {
+        "type": "text",
+        "baseline": "line-bottom",
+        "yOffset": {
+          "expr": " _rotCatPosicao "
+        },
+        "align": "left",
+        "xOffset": 7,
+        "font": {
+          "expr": "_fonte"
+        },
+        "fontSize": {
+          "expr": "_rotCatTam"
+        },
+        "color": {
+          "expr": "_rotCatCor"
+        },
+        "fontWeight": {
+          "expr": "_rotCatPeso"
+        }
+      },
+      "encoding": {
+        "x": {
+          "datum": 0
+        },
+        "text": {
+          "field": "__6__"
+        }
+      }
+    },
+    // ---------------- Linha ---------------
+    {
+      "mark": {
+        "type": "line",
+        "stroke": {
+          "expr": "_linhaCor"
+        },
+        "strokeWidth": {
+          "expr": "_linhaLargura"
+        },
+        "interpolate": "cardinal",
+        "point": {
+          "size": {
+            "expr": "_marcadorTam"
+          },
+          "filled": true,
+          "stroke": {
+            "expr": "datum['__3__'] === 1 ? _rotLinCorDestaque : _linhaCor "
+          },
+          "strokeWidth": {
+            "expr": "_linhaLargura"
+          },
+          "fill": {
+            "expr": "_marcadorCor"
+          }
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "__2__",
+          "type": "quantitative"
+        }
+      }
+    },
+    // ---------------- Rotulo Linha ---------------
+    {
+      "mark": {
+        "type": "text",
+        "color": {
+          "expr": "datum['__3__'] === 1 ? _rotLinCorDestaque : _rotLinCor "
+        },
+        "baseline": "middle",
+        "yOffset": 0,
+        "align": "left",
+        "xOffset": 8,
+        "font": {
+          "expr": "_fonte"
+        },
+        "fontSize": {
+          "expr": "datum['__3__'] === 1 ? _rotLinTamDestaque : _rotLinTam "
+        },
+        "fontWeight": {
+          "expr": "_rotLinPeso"
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "__2__"
+        },
+        "text": {
+          "field": "__2__",
+          "formatType": "pbiFormat",
+          "format": "#.#%"
+        }
+      }
+    },
+    // ----  Rotulo Classe  --------
+    {
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "dy": 0,
+        "align": "center",
+        "dx": -10,
+        "font": {
+          "expr": "_fonte"
+        },
+        "fontSize": {
+          "expr": "_rotClasseTam"
+        },
+        "fontWeight": {
+          "expr": "_rotClassePeso"
+        },
+        "color": {
+          "expr": "datum['__5__']"
+        }
+      },
+      "encoding": {
+        "x": {
+          "datum": 0
+        },
+        "text": {
+          "field": "__4__"
+        }
+      }
+    }
+  ]
+}
