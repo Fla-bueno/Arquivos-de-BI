@@ -1,0 +1,181 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.4.0.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.4.0"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Gráfico Area Suavizado",
+      "description": "[No Description Provided]",
+      "author": "Jefferson Alves",
+      "uuid": "b870a8d2-24b4-47e3-ba76-6c9d919cf9b4",
+      "generated": "2023-03-23T01:18:12.533Z",
+      "previewImageBase64PNG": "data:image/png;base64,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"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "categoria",
+        "description": "coluna que será utilizado no eixo x",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "medida",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "font": "Segoe UI",
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelFontWeight": 400,
+      "labelFontSize": 10,
+      "labelColor": "#b3b3b3", 
+      "title": null
+    },
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#000",
+      "gridOpacity": 1,
+      "gridDash": [1, 5],
+      "labelFlush": false
+    },
+    "line": {
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "arc": {},
+    "bar": {},
+    "path": {},
+    "point": {
+      "filled": true,
+      "size": 75
+    },
+    "rect": {},
+    "shape": {},
+    "symbol": {
+      "strokeWidth": 1.5,
+      "size": 50
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "header": {
+      "titleColor": "#FFFFFF",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#D2D0CE"
+    },
+    "legend": {
+      "titleFontWeight": "bold",
+      "titleColor": "#D2D0CE",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#D2D0CE",
+      "symbolType": "circle",
+      "symbolSize": 75
+    }
+  },
+  "data": {"name": "dataset"},
+
+  "params": [
+    { "name": "linha_cor", "value": "#EF9010" },
+    { "name": "linha_espessura", "value": 3 },
+
+    {"name": "marcador_cor","value": "#f1f1f1" },
+    {"name": "marcador_tam", "value": 50 },
+    {"name": "marcador_espessura","value": 2 },
+
+    { "name": "area_cor", "value": "#EF9010" },
+    { "name": "area_opacidade", "value": 0.5 }
+
+    
+  ],
+
+
+  "encoding": {
+    "x": {
+      "type": "nominal",
+      "field": "__0__",
+      "sort": ["jan"],
+      "axis": {
+        "labelAngle": 0,
+        "labelPadding": 10
+      }
+    },
+    "y": {
+      "type": "quantitative",
+      "field": "__1__",
+      "axis": {
+        "format": ".3~s"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "color": {"expr": "area_cor"},
+        "interpolate": "natural",
+        "fillOpacity": {
+          "expr": "area_opacidade"
+        },
+        "line": {
+          "stroke": {
+            "expr": "linha_cor"
+          },
+          "strokeWidth": {
+            "expr": "linha_espessura"
+          },
+          "strokeCap": "round",
+          "strokeDash": [0, 0]
+        },
+        "point": {
+          "shape": "circle",
+          "size": {
+            "expr": "marcador_tam"
+          },
+          "filled": false,
+          "fill": {
+            "expr": "marcador_cor"
+          },
+          "stroke": {
+            "expr": "linha_cor"
+          },
+          "strokeWidth": {
+            "expr": "marcador_espessura"
+          },
+          "tooltip": true
+        },
+        "tooltip": true
+      },
+      "encoding": {
+        "opacity": {
+          "condition": {
+            "test": "datum['__selected__'] == 'off' ",
+            "value": 0.3
+          },
+          "value": 1
+        }
+      }
+    }
+  ]
+}

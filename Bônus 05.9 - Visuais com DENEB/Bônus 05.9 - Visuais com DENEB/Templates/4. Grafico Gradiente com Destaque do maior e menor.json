@@ -1,0 +1,358 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.4.0.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.4.0"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Gráfico de área gradiente com destaque do menor e maior valor",
+      "description": "[No Description Provided]",
+      "author": "Jefferson Alves",
+      "uuid": "a611dbd1-699e-4893-9218-f0eaf4ea36d0",
+      "generated": "2023-03-23T11:43:51.248Z",
+      "previewImageBase64PNG": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAABHCAYAAADlY75oAAAAAXNSR0IArs4c6QAAD2xJREFUeF7tXXt0VeWV//32d+5NeORBQkIElPpAR1BUtIoPBJ88HGc6ughSZ9aydapV0Gq1WB1nTdZoBV22zlLB6mprO2t8xTXaVqtAoURAVJavseLwEJcPCEhIcoFAbu49Z+9ZJ/TWDNwkBJMbIOf8861zz/m+vb/f/p3vub99ieiKEOgBBNgDZUZF5hKBKpOSCR8MbXhtTO3gi9+rMPEK6xedvA5VVKxeHS/Z6pc3lHtbS7cHx9QXuU8wenRq8Ip3h4YqbjtvbG1PqRoRq6eQzUG5hStXlzj1fw1gqBCzFbgVhgbSPm8499R/LXn9/XvMeL6J3cKAr5B8ID8/9XhzMraYwLqG8065pqfUjIjVU8jmqNyw9VF4jxrsDdCOg7LGiCup+hBEZsNMzeHfqXzYDFsErDbinwFd33jeqbN6Ss2IWD2FbI7KzUYskN+iWakRmwCcHIA/9WBXGLHLzCoAfEggHhErR0Y6FMVkiEXao6p2D8mk0Z5sPPfU/ype+f5porxbxe5tTcmXaPYdA35F2DcjYh2KFu/jOkdd4WFIgHnVSwem/WDALd+++Mveql5ErN5Cvofk/qx6QUme2o9AqaeZDwZJhUxVz268+cqpG3tI7D7FRsTKFdI5ktNKLMMdgDUTVgQIDBLUMXFXVWVlKkdqICJWrpDuY3IiYh1iBg/HT0GqWRo+XtVUctyZA2/+x6k72qvCQ0++WBw+u/U7/5Bo752q6up4GcriMysvaOpOKCJidSeaOShr3nMLHgNQZ0BcIB9qoO+J41XOs/l+mhcSOEVp9SSSpvgGaIOostzEhohZGuRuAGthvBSwJgXfpbNRVMZ9Bo/fXDm1rjuqERGrO1DMYRnzqhdOh+kZhAtMrBmq6wCcoHB/JG0MgSLAKmA2TMFtBBshCKhmAMtFg8fVueMBHB2qbapHU9BAI8WXX37/6kvXd0d1ImJ1B4pRGdGsMOJAbhCIWqzc4NznpETE6nMmz02FI2LlBuc+JyUiVp8zeW4qHBErNzj3OSkRsfqcyXNT4YhYucG5z0mJiNXnTJ6bCkfEyg3OfU5KRKw+Z/LcVDgiVm5w7nNSImL1OZPnpsIRsXKDc86kPFK98OgYXL9AMSDmgliL+TvNsTGX/u5hZSNi5czkuRH02DOvnGbmjVYJzgSxVYyiYn+cVTnljdxosEdKRKxcon2YyHr8pZf6p5PxC42WJ7TPJSBvqJy8qm31ukysly6/rv9ApzcY+XY8CN5Ni/sBYCsu+O0vaqqnTXPl6aJKo8UNTDDQTRN//6t3av7+2muVbulFv31iw2GC7UFdjZtsSl5BYvc5KqggLU5D2oCEr1JrLfH1D1Ys2pWpwEMvLi3OS7ecC9X6QF0CHoYCfh29vNpZV1xcn62iod89rGU2jOUgNhO27cbpk+d9LWKFmRdMu7YkPyU/gGgiCPAOBeMYy5uPdOoM0sp2J5ML+8XzryOlLPDdw+Kl7zVzP7/wd0+8dVBb5BBX7u4dF5yQMr/SgX9nsPAAxW5TBhQTMxhJGqyMho+EWNJC9/6RL9/dGHP+D1UtcCK7DSwGbZsG/M+bZlx6wGGOutxivX3ddbGmL4PJRo6Nqf4hTbkFgubmZPNt+bH+E0UwQomjqbbBgBEQbhGYU5VlEbF6hrm3NZ4zIi6x76rZRDpuguJjMyQFgLYRmbknbBhpJRRxGuh2klvcrtKnvSdOWVtVVdU2S1aFq5ZO9PzTZITP1Mi5RSsWZHupy8Ra8rffH+acfyloJ/mOv/EUk2BoCqAbPLMmpbvCgN002wSRTTD7lhleAKQ+Ilb3E+vH28+/GsAsM6wGuC47lTJy96UaoUcbeEL4hjiWIdA1cLJZFducWKAKjw75qhgEWCmBwWZSRrMdpH02p2j5jG4hVrZCVk6b1i/ZUjj2wt//8vXuhy4qMRsCs+snDpe43gFFmQBrjMx+vjAA4DrAsM1zOiuAIqZq/QHJA82jkiqmNEsbmXSGXUrsJGhGfDG34LXne4xYkel7BoFwYB1Pt4xTP/0pKAM9kVKfWls39rnh6cGf3gbHdYEfrOkZ6Z2X6jzZOKdg2Qs9Rqx51a9eY0oPtP4WmNHjRk3Zko5O6XaudvTGw8++cqyjfBtmq01kJxSXtJR/Mqxh1Cuj0/mJRUL5tDdRMuqm+wuX/67niPXswqsNKCRtnME2EWyeOX3yPb1Z6cNJdngMvvaYxTZ45JpfK1BkxAqqNoR9XIAArrWv29On5fKegto5hSte7jFiHU5GPBjr8qPE+LEC/gvApAgWIzMG7+WUhi33Fb326tciVmfBKKqqqqSjIBVh/jrUpXIZSudgJElXdbpj+/kzCVwN2lqa/GlPy5S5Mi3UV/e5fG4mX84tXrbo6xGrk2AUGsYNMFkPankm+IQZE2GQisB0s+eYDowisGDvVdqugt0X3r9t+4Rvxs1uNyHN2RJaO7O+XgRDIFvvG7h0ydcjVgfBKAR2NsHBSi2kYVsm+ETg3Lg9QSowEKrHg7LKzApmXTX533oRj14RHbboQ0aNOyPpp11cmHASG56GvyVU5qbKy/6cUerHzRO/YS16vZCnB9A3xezPcA4IAhx8qVc3t6Cm5msRqyNrzH924ZSk2Fs/rJzc0CtWOwSE/sfTi4d4Lv09UtZ7pvk+OMqAMALM/86aPuk3d+4473hTb5ohuJgi7wFY/tWQPDM0P7hSAtvmFL62vMeI1ZN2DXfSU03emWZm8XhQm9LYICJo3vtL70kdspX96NMLRlO8/qRflCTejbvgJAvQ2NHmbaacsE7XX3757nCzOH/HrosccDmAY4z4gOq/aRJLHVwUao/iUn9/4bKVhySxwqn2YCuaYcqjPAlW+cpSERxr4Ofhl94dhMqQNxBVz8v/TIP0kM7IO//pV8cEwtPJMBYVm0EJPQkSHW3eVtmoeEtT6XEA/8bUzoPxbJAfg/ahGD+AB8AHDpXUIA1zipZmdSzo8l5hdxjyQMvIfOkHmr+9fBnyBrBmp1Zv4JD9JW+Yt/60J1k6dEdpCmKatn7icWBgLKax1ILgKDo5ksoRRhsGWi2Mm0n5TGBr0+on9zApwycfHrw2/Mow7eB7DrDxgeKatw+KFitcdmCeDUMydWQAbQZdXnv+P7Przi2gx2NEZFi4J2ZiBTAkzVBH2sZ88zZUDarZJ75mazflSQyB9Q+CIMG4q+jMx2jvbipzP3v3xOFIB0MdWaE+jqCz8taJClhC1WI4GQizD2EoM2IgjGkQSZg2C9FkkIQTbAuIOjG0DtYPl0vFEnMHLAvHg/tcOW+x5j/76jTfrFiIIzT0CxI3lsSOTBcye/vEcCZ5FmFnmNlQmm2mxzrzbac5SVpgcRErBDAYxmEktyrtHUI3zC1c8WJYwz3dlExw5qdNYmUIZ6ad+BhV2VmFuxOxK0UkRdjxpjwWDkeF/6Zlao3iIQHIDl814Xnc4aeDplgs3pRKtzTHJJb2fR+e5+GvKf7S8uz9e+b+MHhuvmx/sGT5B50Sq7U1CVpOg+NuBUroNKGBJvdnQNrVrzDsQvDRR37o/xPOiNQ4iYbJhHypwMcO9rEJv+i0XHKYQU+AYRKAtBhfV9VGT/iyt3FkPZ4/MtHWx6jKIC1bxpdqAStEdYQpT4TwJAK1oftI6CkA082+YHPM3BaFtV2R7FSdvvSCUnbcX7B0dafEam1NYEM8iaegfoVCmigWb29AGpKjNCg4xzMTAVOBJ80B/NYg9W3XZrIJDg3c3DjhMjoLW6yxgY9VnuO7inAd7MAuNS10xMlqOJdCg1qpgQNJ1MFAEjED+sOwA7R6gPVgq2PcpyB6dUP3wGrcu7lI7pxTWJPVuyJrV9i2NelI9XDRb/CJZ/8TzQoAVEDYBLNYRzO22xvGj/E8XkLFJRD7HxhTnocX0gBiYZPT3amvQyBIBqDFW1f/0dwjcrpb70OgPM9H071Fy7JGWW53jHVnYsL3oPpRynNrf1pY02kr0t6M7ZbGicV50DGgjQNwNskWEu+bYpV5qEPYvsWBKD30cKDorrnFKz7ptCts+8JdjRNuVbEwHvhRIH2ahd3FF2bcJIZtSiRUrEkDJCUuaTS3Om0UMi5DYDoCJscYMHKPO6ttALjGM/dh0gW1EY8Oj+8o5nu7fzLoT591iVih66t52m/P+oqWmGIoyCEASykoVqCAFrqwMg4L/aIZLo7vhjFh1C8JVwvVzwOi8wF47w4VIukHiAB9aX6gtCbrP4q12xXetWv8ESL98tGSBPIykvMBJNuokY/oed/FR9WS9w1YvrlLLdbtW84pz4t5ea2bcn+5wuYruo/wyCAgab/lwYqVW7tErDt3XFRKlwqHQ9EVIZAVAQviqTmFS7Kelm63Kwxnc56XiiM8jD0AiNIIh715MHBIPFXFfbfUQha2S6yq+imFLbFUuOQTXRECWRHIK4inq/hq1vOM7RLrdhszwDWWe0Bjm0IHIbqP8MgQIhhU6j/IrwKMtGVfu8S61c7uV4Q8h/BvEcNt3CiNcNiLB9vLWoKH+Ebb+dxfudV+V2ij4ts3FnV0ODvqIPo4AkXDhwdVfD7rH5i3S6zH7fRYC8ol3AgaCSBKIxz25sFJOFKv5xPh9u4+V/st1tKJXu3EnTn31+rjjcAhVf2hKLAq1oQurvtPrGk2zY1GXUSsQ8rUuVV2FMqsks9n9Vdrv8WqgqDPnf7LrWEOB2lV/H+x3TofvIeOcRYee2td6orSCIdsPADIVnLsf1d4OHxNUR16D4F9usJHX1hcGos1N4cHKvdHrcyZvHq3c+X+Bvx4pPoPJ4dld8WXPsyT79io8aBhf3T7+VOLRqZj6fwweH5D0LS1JDUwv7N4XQ//9yvDuxpoP5Nnf/M+Vr3gzL1DV3eEcxh8zUsmT71pxpSa/Tn+Fnr1lp541iWeYu0NM6Z8uj95wtjwAW3XrKsuW7e/Nk/vil+IuHujvcjK+xBr/jMLxjPGk4JAYzS0qLmXOoqe+8gzi4aKs/EAjgujojqzt26cPnlxRwo++tzC75IopzGhCOKifO/GGZOzHtUOy/lZ9YKSuNmNDlJr0CEKeX3W9EnLOpIx/7kFF8NwjhGmpgnPsOKGGVOzHlUKy2n139fCqwUWp2CABfLmzBmTsp7yzchtmwfOmmZOm/pURzqFgdSEMl1gZmj1sa9Qdc91hG9IrFhLyzUARhCyBhJ7amblBU3tydlzlN+fQCcOflDYGieykzzzqhdON7VRIrYdJvWAberIhhmb0w9a1LkJNF1fJzt/0bZh+T8mrSneQxzPUgAAAABJRU5ErkJggg=="
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Categoria",
+        "description": "Coluna que será o eixo x",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Medida",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__2__",
+        "name": "Maior Valor",
+        "description": "Quando estiver no contexto do MAIOR VALOR, será necessário retornar a string \"s\" . Cálculo deve ser feito via DAX ",
+        "type": "text",
+        "kind": "measure"
+      },
+      {
+        "key": "__3__",
+        "name": "Menor Valor",
+        "description": "Quando estiver no contexto do MENOR VALOR , será necessário retornar a string \"s\" . Cálculo deve ser feito via DAX ",
+        "type": "text",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "area": {
+      "line": true,
+      "fillOpacity": 1,
+      "color": {
+        "x1": 0,
+        "x2": 0,
+        "y1": 1,
+        "y2": 0,
+        "gradient": "linear",
+        "stops": [
+          {
+            "offset": 0,
+            "color": "rgba(120, 241, 62, 0)"
+          },
+          {
+            "offset": 0.15,
+            "color": "rgba(120, 241, 62, 0.03)"
+          },
+          {
+            "offset": 0.3,
+            "color": "rgba(120, 241, 62, 0.1)"
+          },
+          {
+            "offset": 1,
+            "color": "rgba(120, 241, 62, 0.5)"
+          }
+        ]
+      }
+    },
+    "font": "segoe ui",
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelAngle": 0,
+      "labelFontWeight": 400,
+      "labelFontSize": 10,
+      "labelColor": "#95A9B8",
+      "title": null
+    },
+    "text": {
+      "fontSize": 8,
+      "fontWeight": 400,
+      "color": "#95A9B8",
+      "limit": 110,
+      "dy": -6
+    },
+    "padding": {"top": 12},
+    "line": {
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10}
+  },
+  "data": {"name": "dataset"},
+  
+  "params": [
+    { "name": "linha_cor",  "value": "rgba(120, 241, 62, 1)" },
+    { "name": "linha_espessura",   "value": 3  },
+
+
+    { "name": "rotulos_maior_tam", "value": 25 },
+    { "name": "rotulos_maior_cor", "value": "#11C4D1" },
+    { "name": "rotulos_maior_peso", "value": 600 },
+    { "name": "rotulos_maior_posicao", "value": -100 },
+
+    { "name": "rotulos_exp_maior_tam", "value": 12 },
+    { "name": "rotulos_exp_maior_cor", "value": "#95A9B8" },
+    { "name": "rotulos_exp_maior_peso", "value": 500 },
+    { "name": "rotulos_exp_maior_posicao","value": -85 },
+
+
+    { "name": "rotulos_menor_tam", "value": 20 },
+    { "name": "rotulos_menor_cor", "value": "#BF5064" },
+    { "name": "rotulos_menor_peso", "value": 600  },
+    { "name": "rotulos_menor_posicao", "value": -75 },
+
+    { "name": "rotulos_exp_menor_tam","value": 12 },
+    { "name": "rotulos_exp_menor_cor", "value": "#95A9B8" },
+    { "name": "rotulos_exp_menor_peso", "value": 500 },
+    { "name": "rotulos_exp_menor_posicao","value": -58  }
+  ],
+
+
+ 
+  "encoding": {
+    "x": {
+      "type": "nominal",
+      "field": "__0__",
+      "sort": ["jan"]
+    },
+    "y": {
+      "type": "quantitative",
+      "field": "__1__",
+      "axis": null
+    },
+    "opacity": {
+      "condition": {
+        "test": "datum['__selected__'] == 'off' ",
+        "value": 0.3
+      },
+      "value": 1
+    }
+  },
+  "layer": [
+    {
+      "description": " *****************  ÁREA   **************** ",
+      "mark": {
+        "type": "area",
+        "interpolate": "natural",
+        "line": {
+          "stroke": {
+            "expr": "linha_cor"
+          },
+          "strokeWidth": {
+            "expr": "linha_espessura"
+          },
+          "strokeCap": "round",
+          "strokeDash": [0, 0]
+        }
+      },
+      "encoding": {
+        "tooltip": [
+          {"field": "__0__"},
+          {"field": "__1__"}
+        ]
+      }
+    },
+    {
+      "description": " *****************  RÓT. DADOS   **************** ",
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dx": 0,
+        "baseline": "bottom",
+        "angle": 0
+      },
+      "encoding": {
+        "text": {
+          "field": "__1__",
+          "format": ".3~s"
+        }
+      }
+    },
+    {
+      "description": " ************* RÓTULO DESTAQUE MAIOR VALOR ************** ",
+      "transform": [
+        {
+          "filter": "datum['__2__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "limit": 0,
+        "align": "center",
+        "dx": 3,
+        "baseline": "bottom",
+        "angle": 0,
+        "dy": {
+          "expr": "rotulos_maior_posicao"
+        },
+        "fontSize": {
+          "expr": "rotulos_maior_tam"
+        },
+        "fontWeight": {
+          "expr": "rotulos_maior_peso"
+        },
+        "color": {
+          "expr": "rotulos_maior_cor"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "__1__",
+          "type": "quantitative",
+          "format": ".3~s"
+        }
+      }
+    },
+    {
+      "description": " *********** RÓTULOS EXPLICATIVO MAIOR  ********** ",
+      "transform": [
+        {
+          "calculate": " datum['__0__'] + '-foi o melhor mês'",
+          "as": "_texto"
+        },
+        {
+          "filter": "datum['__2__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "lineBreak": "-",
+        "limit": 0,
+        "align": "center",
+        "dx": 3,
+        "baseline": "bottom",
+        "dy": {
+          "expr": "rotulos_exp_maior_posicao"
+        },
+        "angle": 0,
+        "font": "Segoe UI",
+        "fontSize": {
+          "expr": "rotulos_exp_maior_tam"
+        },
+        "fontWeight": {
+          "expr": "rotulos_exp_maior_peso"
+        },
+        "color": {
+          "expr": "rotulos_exp_maior_cor"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "_texto",
+          "type": "nominal",
+          "format": "#,#",
+          "formatType": "pbiFormat"
+        }
+      }
+    },
+    {
+      "description": " ************* RÓTULO DESTAQUE MENOR VALOR ************** ",
+      "transform": [
+        {
+          "filter": "datum['__3__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "limit": 0,
+        "align": "center",
+        "dx": 3,
+        "baseline": "bottom",
+        "angle": 0,
+        "dy": {
+          "expr": "rotulos_menor_posicao"
+        },
+        "fontSize": {
+          "expr": "rotulos_menor_tam"
+        },
+        "fontWeight": {
+          "expr": "rotulos_menor_peso"
+        },
+        "color": {
+          "expr": "rotulos_menor_cor"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "__1__",
+          "type": "quantitative",
+          "format": ".3~s"
+        }
+      }
+    },
+    {
+      "description": " *********** RÓTULOS EXPLICATIVO M  ENOR********** ",
+      "transform": [
+        {
+          "calculate": " datum['__0__'] + '-foi o pior mês'",
+          "as": "_texto"
+        },
+        {
+          "filter": "datum['__3__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "lineBreak": "-",
+        "limit": 0,
+        "align": "center",
+        "dx": 3,
+        "baseline": "bottom",
+        "dy": {
+          "expr": "rotulos_exp_menor_posicao"
+        },
+        "angle": 0,
+        "font": "Segoe UI",
+        "fontSize": {
+          "expr": "rotulos_exp_menor_tam"
+        },
+        "fontWeight": {
+          "expr": "rotulos_exp_menor_peso"
+        },
+        "color": {
+          "expr": "rotulos_exp_menor_cor"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "_texto",
+          "type": "nominal",
+          "format": "#,#",
+          "formatType": "pbiFormat"
+        }
+      }
+    }
+  ]
+}

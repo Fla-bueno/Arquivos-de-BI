@@ -1,0 +1,200 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.4.0.20220831#4f0615e",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.4.0"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Barras Gradiente",
+      "description": "[No Description Provided]",
+      "author": "Jefferson Alves",
+      "uuid": "9430c54a-5665-46bf-8be2-40ba28365286",
+      "generated": "2023-03-22T18:04:22.672Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Categoria",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Medida",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "font": "Segoe UI",
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelColor": "#A6B6D1",
+      "labelFontSize": 12,
+      "title": null
+    },
+    "bar": {
+      "cornerRadius": 8,
+      "color": {
+        "x1": 1,
+        "x2": 0,
+        "y1": 0,
+        "y2": 0,
+        "gradient": "linear",
+        "stops": [
+          {
+            "offset": 0,
+            "color": "orange"
+          },
+          {
+            "offset": 1,
+            "color": "purple"
+          }
+        ]
+      }
+    },
+    "padding": { "right": 15 } , 
+    "arc": {},
+    "area": {
+      "line": true,
+      "opacity": 0.6
+    },
+    "line": {
+      "strokeWidth": 3,
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "path": {},
+    "point": {
+      "filled": true,
+      "size": 75
+    },
+    "rect": {},
+    "shape": {},
+    "symbol": {
+      "strokeWidth": 1.5,
+      "size": 50
+    },
+
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#C8C6C4",
+      "gridDash": [1, 5],
+      "labelFlush": false
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "header": {
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleFontSize": 16,
+      "titleColor": "#252423",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C"
+    },
+    "legend": {
+      "titleFont": "Segoe UI",
+      "titleFontWeight": "bold",
+      "titleColor": "#605E5C",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C",
+      "symbolType": "circle",
+      "symbolSize": 75
+    }
+  },
+  "data": {"name": "dataset"},
+
+
+  "params": [
+
+    { "name": "rot_dados_tam", "value": 10 },
+    { "name": "rot_dados_peso",  "value": 500  },
+    {  "name": "rot_dados_cor", "value": "#A6B6D1"  }
+
+  ],
+
+
+
+  "encoding": {
+    "y": {
+      "type": "nominal",
+      "field": "__0__",
+      "sort": {
+        "field": "__1__",
+        "order": "descending",
+        "op": "sum"
+      }
+    },
+    "x": {
+      "field": "__1__",
+      "type": "quantitative",
+      "axis": null
+    },
+    "opacity": {
+      "condition": {
+        "test": "datum['__selected__'] == 'off' ",
+        "value": 0.3
+      },
+      "value": 1
+    }
+  },
+  "layer": [
+    {
+      "description": " ******************** BARRA **********************",
+      "mark": {
+        "type": "bar",
+        "height": {"band": 0.7},
+	  "tooltip": true
+      },
+
+     "encoding": {
+        "tooltip": [
+          { "field": "__0__"} , 
+          { "field": "__1__" }
+        ]
+      }
+    },
+    {
+      "description": " ****************** ROTULO DADOS  ********************",
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 3,
+   
+        "fontSize": {
+          "expr": "rot_dados_tam"
+        },
+        "fontWeight": {
+          "expr": "rot_dados_peso"
+        },
+        "color": {
+          "expr": "rot_dados_cor"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "__1__",
+          "format": ".3~s"
+        }
+      }
+    }
+  ]
+}

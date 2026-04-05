@@ -1,0 +1,245 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.4.0.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.4.0"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Bullet Chart com multi rótulos",
+      "description": "[No Description Provided]",
+      "author": "Jefferson Alves",
+      "uuid": "37623e6a-ffea-4689-ae83-aca2e996eb14",
+      "generated": "2023-03-23T12:12:17.279Z",
+      "previewImageBase64PNG": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF4AAADVCAYAAADepUd1AAAAAXNSR0IArs4c6QAAF1dJREFUeF7tnXt0VPW1x/f+nTOTJ0kIJPIWsOKD+gQEhEBQkwAZEkCD9qFWL9e6ulx4dbX3uu4N7VRY1C7b3kqv1mpdd92+XDW3SDIpVMCSEqmPiraltopVrPISSEggyUxmzvntu/aY6JibSc7M/CZzZnLOXzz27/fb+3N+c+bM+Z69N4JzpIQApmRVZ1FwwKdoEzjgLYB/rvLWvM7CQGBdQ4NJANhQVyf4zxaGRjVxwFug11K7vowQzifCU7qAQNCUE4WGfiSa6+8NPLxy58/PWpjmUyYO+GGIvXrXXa6zp4xLQbgmgzRdmsRTpJlZJMVSIDriDwaeccDHuu1SaK9sx5dV1dwNhD9MYSypWLpDC+KMlpbtHbEurgz8PSvX/bQU9S9m8n0Sf5u+GPSDH+THnDVNm9qyc9uRhMD7fL67ETGPiN4RQrxTXV190OqEP15122sXjy+5Ss/NAS0/F3r+cRSyxo0FEAio69Bz+AOrU9na7r8DHXBYhpSDvxkRLzVNMw8Rz0NEIqLXhBAXEtFZIipBRD8RHRFClADAyx6Pp4G9eNRz24tVd96ywFVcBCAldL/9HrjGFkLuBdNA+gPgP/ohHH26ydZQrTj3ZOAMfCCNpIA/KaX8GiK+K6V8WghRQUQdQoheImonojWIeAgASqSUT9TW1r7eD35pVfmCsfOugGBbR3iniyw3AAEYXd3gHj8WOl49CKf3vmglPtvaJAX8wGi3bds2Ttf1fzYM48m1a9e2DUWDd/yluntBv03R3MsgcOQEBE6csi3EeBwbEfCxOHbfipufnqK5bollTLrZhoCgJdQN3URqLzWJgCirqrkHCH+QyBzpODZLuov27GnojNV3ZbeTvHB5eV1+rA6km31RUZ5eWlqUc+jQ0XM5OV2hnTt39sYTg1Lw8TiQbmMeeuihwlAotF7TtF+bprmGiPyI+EcimiaEmEdE39+4ceM7w8XlgB+O0ID/37JlS4lpmh4hxPtSSv5NlYuIhUQ0k4jciPgTB3yMUEfS3NnxI0k7Yi0HvAM+RQRStKyz46OAf6auzp3fNQE1s0Pvl/1UniMHfBSa++ruKDFDWg0SHDIluFDAFEQUSNBJAs5b9uyTjydyIhzw0cCvvWsiSaMsJORhkO7JQpqnBJCbUFxPAL+/rvHHOxzwiRBI0VhlO35JZc3tBPi9FMVht2XP9mTJ2Qd8vp5ojikDX1d14w/yBN6DGaj9nSUTToZ/pFo/giZNePn5pg/jAu/z+Z4kIklE36ytrT3GkzQ2Nk7SNK3W4/F8Sthm6e+z06ZdxQKIlpsDoc5zIDQN/EdPWPfWppYSCL7Zc5o1HctHouAfI6JeIcQhKeUsRDxORMV98t8/+BnFqlWrHmFvWAipvK1uQfaUCSC7/WHd1Qz0Qudrf4G21j9Ydtiuhl/viU3QSQh8U1PTA7quPyWlvJeICgEg/BoDIhYBwEkAKPB4PF/rB798/ecX5E6bDGYoBO37XoG8WTNAH5MHJ3f+DrrePmxXppb8GlHwljzqMxoo/cUyNh1sbQv+X6tvaajQ825KB4ix+viGGYRfBWN7PTKhS00sDpZV1H4dEL4Zy5hMtjXQPe7F5xra47qriQVMeXm5HnSPLY5lTKbauoMUHO61PmX38ZkKMY640Ov1asXFxdqGDRui6rEO+DjIRhvy4IMPfkkIMUVKeUgIMV1Kyb9ce4QQE+rr67dEjnPAKwLfp8V+CxH5jbtniWi6EKKNiCoQcX99ff3PHfCKYCcyjbPjE6GXwFgHfALwEhnqgB+E3jN1dVphZ3Z2Z2EgxPJf6dReOfeJJz55KT4R4n1jHfCDQNxb95V8DAbrKEffCz3mckBpEN+dgPCrkP14SQf8IOB3191VqIfMZRrJQwbiJVKiSwf6UJXs54BXcMmIdwplO76sYvX1JGhNvI6k2zhB+Pq+XdufitdvZeBrqtb+ZzaKf1E2YbwRKR4XBILTETlPEdMfa93VODne5ZRxerzmtpc+O65kfjjrLzcHek+3Q+jMR+/r586YmtZZf5v8pyEUkQXSB1sdeNZYAcDFGmtNTU1YMmpsbLxKCDFL07T9/PeVK1cOmtPZn/WXe/4UkIYBXW+9A6jpkFU6DoAIgmc60zbrL+ngm5ubv0dEASISAHBaCDFGSnlOCHExER0HgCwiYsmPP2JvA8CYmpqab/MJYfCc9Teu7Bowuv1gnD0HgWMnwV1SDGQYkHXe+LTN+ks6eNZYEZEf7MwFgDcRcSwihqSUk4noT5qmXQAAnUQ0HhHflFLm1dTUfKcffKZm/SUd/HBfFE1NTbMRkZOQ93o8nr2R9purv7BzkStn+XBzpNv/d5OEh/1tEUn0H0eg7hqfCJRRKP39rXVX46XxMlN2V7NoUc0YHCPmxOtIuo3TRfDNlh074n5bSxn4dAMXj79er7eAFaWCggLX2bNnKTs7O+uBBx7g1w9iecksvLQDPoYzsGnTJg8RFQkhpkkp3wOA8USkIWLnYPLeUFM74C2C37p1a1ZHR8dcTdMuklJy5RKJiFl8201Elw8m7zngLcIdSTNnx48k7Yi1HPAO+NQQiJD5Aiz3jZueE1Qt8w0W2ajf8f0yHwjqAlMUEZKbgM6olPkc8IMQ6Jf5UAMTTOCCagZIPKFS5nPAp+ZqNuiqyi41i27wTNNQXEmClM1pI05DukKGPPjC879+NxZ/lUEqq6j9YZbAu2NZ3G62XCrbiP3XPxDhthd2b78xlniUgf9O9a2/nePKWsaL5180M1zwUwY+eks5naS/WFNuPoKNP2vdtf3WuMA3NTWtEEJ8WUr525qamq0DJ2lsbKzo+zdWpmatWrXql5E2rLnOv2bO/NKqJWD6e6H77cPgHl8M7qICMHuDaSP9jTj45ubmaiKqJKIgALDeOhkRg0RkICJn+80GgK5o0h+DX1xRPj9v1kzQstyg5eeBcOkQ6jwbrrqaf/EFaSH9jTh43tGIOF4IcQMAHCCiCZzXioiTpJT8MGg6Ir4fTfpj8BcJ9/z+T0Hxwquh/cXXYvn02cJ2xMEnGvVWz62tl+lZixOdJ9Xj0w58eUXtQ26B/5ZqcImsz3c0oZglDV6Rfta6qym+L9dEHOaxiytr5wNQxondw3HhiuPSlLv27/G9NJxt5P8ru52MZdFMsO2TAflGxA0AwYKCArz//vv9VmNzwFslNcCOZcC+O71sImpGxOu46mq0LL+Byzjg4wDfLwMCQCUPF0I8z9VNhBDniGipFRnQAR8HeBVDHPAqKMYxhwM+DmgqhqQ1eO5K9u6ZMxyDmWjvPRUwY5kjbcHvLf9SNozV/4kgXL+d67XNIqIXUMOxifTgiwVeIrZpC56D/t3qO9cZAB0aaYsAaDoJ+SSQuCGRHnyJwIxlbFqDjyVQu9kqA1+2YkUJmu4L7RagKn8CpnjrleefHbIlUyxrqQNfWfswAHw1lsXTyZYAN7+wa/tGVT4rA7/F84XfLNRzqlQ5Fus8nLVxjj5pfhjr+GHtCR5s3d34jWHtLBpEBd/U1FSLiFeGQqH/crvd93k8nvrIOXfs2DGF/96fBRgphORMnQggCYweP3D6JbpdSU+3/FHgDBwdPB/VIophzEYKPCtSQggPJ5kR0SIA4Dq5XG31Ja62KqX8OwD8vba2dje7zOCX3bxmfvaEEiAg6Hz1IORdOB1ypk4KZ/31vH8sqemWGQVe07TPEBGnWvLjzw5EfAvDRRUkZw5fRETbI8EvWDBv/vjyheF0B7PbD72n2iF7YgkE2zuSnm6ZMeBj/XwOlP5Gusnio4Ez8GEmXGpiBb+8cs33ijXtvljHqbA3iOCUNOCTLqsqZh0wx0hd42N1fUnV6nWSZPj5dGYe2vYXdj3brCo2ZbeTqhyy0zz9WX5er5c/TOFCnn1/TthNB/wQCFneM01TapoWfplLCJFrmuapWJopRpveAR+FTL+8x79lAKAMEf8ipXwfEafG0kzRAZ/wxUHtBM6OV8vT8mwOeMuo1Bo64NXytDxb2oDntMi6hgZqqftK7rKGx7osR2hTw7QAz9BLjKJbiCCAKLsliOkC6Y9oUgmAmGua2hPXNz9+1KaMB3UrLcCz5y1r1ldI7jKJNFMCvIIMH2gcAbqlof3vqAU/Z84cl1Y0jeu52P5AdyD08s6dsbW5URyVsh2/pHK1l4CUKTSK4/x/07XualQWezy+Klv836tv2b5Iz62Nx4lYx2wLdsEhM2rfE0vT2R68z+e7t7+f31ARPbbq9ldm5+XPyz3/o6qvyUy3bAn1wG9D3ZYARzOyPXiuRUlEP+GOllJKHQA0IQSrUO8KIc54PJ4nODgGX3nHzfP0vBwgSRBs6+CmgEmptDoqwPt8vgellM8h4kohxPlExO1Fp3PnFyFEUX97UQZ/w+fXzOPkYhky4Nxf3gqXPEtGpdVRAd7q55nBX6K55vXbJ1P62x3qgtaQ5ayXQUOw/aXGKviblq99vAi1L1u1T8TuuDTgbILv0GQM+MUVtWsQ4elEgI7YWMQ/tz63/ZoRW2+QhZTdTqYyCCtre73ebM7MY1su1un1egNWxiXLZtSA37Rp0wxEvIffpRdCNBuG8TkA2McvZ7GUZxjGRq/XG7UNqOoTMGrAb968+XYpJfdymgYAhYjIBZm5UUElIh4xDOPHDnjV28uG842aHW839g74FJ0RB7wDfmgC/amV3PRw5c4fJPZoMkWwI5dNix3PqZVYpN9BRFJq2h/QlMvTKbVysPOcFuDZ8ZbVd3xOkuZCghmIMDOdUiuTDn7hwrqcVH6Ki4q65M6dO9PiMqRsxy+prP0qAXDmX0oPlHD5vj2NB1PqhIXFlYG/r3pdw3nousnCmgmZ9JIMPxLujVYRlWhx6+6mcHs8Ox9h8F6vV1x99dX3AECOpmk7pJSBUCjUrut6ARF9Rtf1E9XV1UPuosjn8Zz1x/lPyaq0+qNABxwN//of5Egn8I2NjZcLIT67atWqX/h8vu8i4gfccISIOMNvnKZpupQyiIjcgDHU96ryXyN7/TH4hfOvnle6vBzMc13gP3IC9IL8pFRazRjwzzzzTH5ubu6GvkKfS7nPn2maDHwCALRxph8RfcBlgonogBCiDAAORvb6Y/BLKpfOy5pYGs5tdZeMAy0nK5zxp7rSasaAV3EtHEnpzwEfccb4y7UU9KR/ufKSz4d6MuPLVcWOd24nY6Oo7HaSl720rs5deiqPm/CO6HHFFZMKDx8+0XPBBYWuwsJC7sUXU/HNEXW2bzGl4FMRAGupQoh1fBcmhOAmwPx3bvLrUpGdl6yY0h785s2b+Z3B2zVNOxwKhaYiF/slMrkPn4rsPAd8sgikaN603/Ep4pbwsg74hBHGN4EDPj5uCY+yPfi+bD+JAMTy30g0QEyYqoUJbA3+42w/SeN0TTSYpllNAD3JboBogVvCJrYGz9G13HTnilCvPCN0PRdJjhUS2pPdADFhqhYmsD14CzGkpYky8H2vaTekmMJ711971Syv15vEApRqIlQG/taqG5/KFuJONW4NPsubJhcDHProyZJ5B3y+nuHsUv3/lsD7fL7yPkd7ELEKEbcPlAIjn8f3N1nMnToJek+3g6uoQEnBz2/1tIEfht7MGQW+v8EiIs4hogJuRQcA5xCxsD8Vs1/6K752DhjnusH0Bz7K+AMMF/wMnulMuODnaAS/XAgxEQBmcMqlrutmXxHQAo/H8zX+NHws/ZWOBzJNyJ05FciUEDzVDsG2M0qaLI468FauhwOlv2Q0WXTAD3ImOKX+2iSm1HeShCcCHSCH6TCcUdd4KzveLkUketqOuA8cOBDlpRsrkYyMjaW7GiuucNkU9/iZY6zYJstGii4j1eVQrMamDLzVBVXb2S2N0mp8aQ++L43yLgDwSymPIeLFqUyjHDXgOY3SMIxOIcR0IcRkIpqVyjTKUQPeaqB2s0v7S43dgFr1xwFvlZRiO1uDJwBsqKsT3ECR1SiuDrWuoWH4R5SKISVjOluDb6ldX2YCmghUDohvSTInCIF+7v0CINqWPfuksg4GyYA71Jy2Bv+7NesvMUxcrCEtNiX8DwicJ4TxBoK20CRqvH77U6+MNDBV69kavKog7TiPMvBLKlZXkiCuAZPyg4B++cJzTb9JuSNDOKAM/MrlNz5SBMjpPEk5uFMuP6G0ciDA1n27Gu+1Ypsqm0HBNzc3Pw4AjwDAHCllR01NTfhLzOfzXRNN+nvE88X9V+YXXssFP82ej7qeqcz6a5MGPBI4Y4lT2oL3+XwM/W/cmMQ0zeNCiDFE1IuIJitQ0aQ/LviZdd54AFOGK632njwNpZVLIHD8ZMLSXzdJ+LbfWjvVtAXP1VWFEPlERAAwEwBOCyGOm6YJrLlGk/644GfO9Clh8LzbtZxs0AvzofvwEXAXF0LHqwfh9N4XLe3agUajAnw8ZJKd9eeAj3JWNld/fvciV+4N8Zw0K2P+ZvbC073WSr6n7aXGCoiBNnaR/sJ+EWxp3d34H/HEMVJjlN1Ozl+xoiCbsrk1W8qPAAbesLsEqAx8qmn3S4C6rssNGzbYvmZNxoBnCZCI1mua1mOa5lFE1IgohwtfIOLp+vr6n6Z6c0SunzHgWQI0TfMEIs7mKqpExHLgSwBwHRH9auPGjXsc8HYikCJfMmbHp4hf3Ms64ONGl9hAW4OPlP6eq7w1r7MwEGAZMLGQ7THa1uDD0p+UOaCJhQLhNJn0HiAUogCXI/0lcQOx9GcSrQbE2ZLE6xqFjqDQuLh+uSP9JRF8Jk+t7FKzqGrVbCHFutTAwu6g3vu43R8TJOUH1LKK1d91Cbg/WeCDRPxOR9RDSrlw/x4f/2BKi0PZjmfp73I9+1qOmgt+giQwevyg5eUC9Qah95Q19SgatX2hHtgzRH+/tAU/sNpqZDplc3NzncfjGTJ5+OOCn1VLwOjqgXNvvA15F0wD4XKBDIWg48DBsAIV7/Gy4YdfB6N3jE5b8P3VVomIFeXLEfE9RFxuGMZeRLxCCMEvDy1FRKZ3pZTyTwMrrXLBz7zPTAfh4l6MCCQldP/9PcidOQ1Q0+Dwoz+JlztkLPj+aqtSyg81TZtLRF1Syl4hRC8RncedQhExSEScbsNP/84NrLSazF5/GQs+7q3YN/Bhzxdb5urZXB43KUfGXuMTpVVWWftwNoivJjpPtPGBYVLpUdLV+/Y0vZ6s9VXPq+yuZvHKNbPAkBepdtDqfGO04K506ZbAMSkDbxWQSrutW7dmtbe3cwyG1+s1VM6d7LnSFrzX683VdZ0vbSz18dtuk7i2PQB0pKJpYqwnKm3Bc6CbN2++W0rZjogXAsBlRPRXRByfiqaJowp8rMHayT6td7ydQMbqiwM+VmKK7G0LPpNlP1vfTn6c8Yd0PZmwX6CcSIiUCbKfrcH3Z/zpSEtNoENBgl9kazgjE2Q/W4NXdCm17TTKrvFlVWsnIoUuSX2kIrBvV+PvU+/H0B6oA19Z+7ALgRstKj+MGCfNku6iPXsaOpU7onBCZeCT+Vj4lZAfmkPR1aeBPNIWvM/nWy2EeGe4xoqRAbP0Nzsvfx6nW3a99e6nWOTOmJpQpdU/mgHY1nvO8n5LZ/A3SykPIeI0rq6KiP8AgEl9kfOnJFdK+f5A6Y/TLYXbxakw4D96ArInlippsjiawH9BCOGSUl7KLw1wvS8i8nOnH0TMJqLjLAMOlP443dJdOg6EpkGwrQPyL5qhpMniqAFv+TMdYRj5egf/c9HcyyBw5AQETpyKZ7pPjXHAD4GwqmrN9/NB3Ksp+7r+ZLE2MoFfaLJ6pO013mqAkXZcvQOQquMZq3IMIXRpvZ3faGlpsbUilYT9qRKj9bm8Xm/BsWPH/JMmTaLi4mLN7pl/GQGetdfOzk5+tWQJEf2Za1BKKblrQo8QYkJ9ff0W66dwZCwzArzX683XNO1eRGzlxopExMU/udNlBSLur6+v//nI4LS+SkaAtx6ufSwd8Ck6Fw74FIH/P0gKr3v/OXT7AAAAAElFTkSuQmCC"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Categoria",
+        "description": "Coluna que será o eixo do visual",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Realizado (valor)",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__2__",
+        "name": "Meta (valor)",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__3__",
+        "name": "Realizado (porcentagem)",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "font": "Segoe UI",
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelColor": "#b3b3b3",
+      "labelFontSize": 12
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "padding": { "right": 15 } 
+  },
+  "data": {"name": "dataset"},
+  "height": {"step": 65},
+  "transform": [
+    {
+      "calculate": "datum['__1__'] >= datum['__2__']",
+      "as": "fat_positivo"
+    },
+    {
+      "calculate": " datum.fat_positivo ? '#26969F' : '#BF5064'  ",
+      "as": "barra_prog_cor"
+    }
+  ],
+
+
+  "params": [
+    { "name": "barra_meta_cor", "value": "#3D464F" },
+
+    { "name": "rot_porc_tam", "value": 10 },
+    { "name": "rot_porc_cor",  "value": "#f1f1f1" },
+    { "name": "rot_porc_peso",  "value": 600  },
+
+    { "name": "rot_valor_tam",   "value": 10  },
+    { "name": "rot_valor_peso",  "value": 600 },
+    { "name": "rot_valor_pos",   "value": -15 },
+
+    { "name": "rot_meta_cor", "value": "#838383" },
+    { "name": "rot_meta_tam", "value": 10 },
+    { "name": "rot_meta_peso", "value": 600  },
+    { "name": "rot_meta_pos",  "value": 16  }
+
+  ],
+
+
+  "encoding": {
+    "y": {
+      "field": "__0__",
+      "type": "nominal",
+      "sort": {
+        "field": "__1__",
+        "order": "descending",
+        "op": "sum"
+      },
+      "axis": {"title": null}
+    },
+    "x": {
+      "type": "quantitative",
+      "axis": null
+    },
+    "opacity": {
+      "condition": {
+        "test": {
+          "field": "__selected__",
+          "equal": "off"
+        },
+        "value": 0.3
+      },
+      "value": 1
+    },
+
+    "tooltip": [
+      { "field": "Vendedor" }, 
+      { "field": "Faturamento" }, 
+      { "field": "Meta" }, 
+      { "field": "Porcentagem Meta" }
+      
+    ]    
+
+  },
+  "layer": [
+    {
+      "description": " **************** BARRA META **************** ",
+      "mark": {
+        "type": "bar",
+        "height": {"band": 0.48},
+        "cornerRadius": 3,
+        "color": {
+          "expr": "barra_meta_cor"
+        }
+      },
+      "encoding": {
+        "x": {"field": "__2__"}
+      }
+    },
+    {
+      "description": " **************** BARRA PROGRESSO  **************** ",
+      "mark": {
+        "type": "bar",
+        "height": {"band": 0.32},
+        "cornerRadius": 3,
+        "color": {
+          "expr": "datum.barra_prog_cor"
+        }
+      },
+      "encoding": {
+        "x": {"field": "__1__"}
+      }
+    },
+    {
+      "description": " **************** Rótulo Porc. Meta  **************** ",
+      "mark": {
+        "type": "text",
+        "color": {
+          "expr": "rot_porc_cor"
+        },
+        "align": "left",
+        "baseline": "middle",
+        "dx": 3,
+        "fontSize": {
+          "expr": "rot_porc_tam"
+        },
+        "fontWeight": {
+          "expr": "rot_porc_peso"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "__3__",
+          "format": ".3~p"
+        },
+        "x": {"datum": 0}
+      }
+    },
+    {
+      "description": " **************** Rotulo Valor Fat  **************** ",
+      "mark": {
+        "type": "text",
+        "color": {
+          "expr": "datum.barra_prog_cor"
+        },
+        "align": "center",
+        "baseline": "bottom",
+        "dx": 0,
+        "dy": {"expr": "rot_valor_pos"},
+        "fontSize": {
+          "expr": "rot_valor_tam"
+        },
+        "fontWeight": {
+          "expr": "rot_valor_peso"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "__1__",
+          "format": ".3~s"
+        },
+        "x": {"field": "__1__"}
+      }
+    },
+    {
+      "description": " **************** Rotulo Valor Meta  **************** ",
+      "mark": {
+        "type": "text",
+        "color": {
+          "expr": "rot_meta_cor"
+        },
+        "align": "center",
+        "baseline": "top",
+        "dx": 0,
+        "dy": {"expr": "rot_meta_pos"},
+        "fontSize": {
+          "expr": "rot_meta_tam"
+        },
+        "fontWeight": {
+          "expr": "rot_meta_peso"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "__2__",
+          "format": ".3~s"
+        },
+        "x": {"field": "__2__"}
+      }
+    }
+  ]
+}

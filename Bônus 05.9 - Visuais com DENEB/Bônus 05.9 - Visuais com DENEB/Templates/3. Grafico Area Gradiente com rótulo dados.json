@@ -1,0 +1,197 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.4.0.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.4.0"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Gráfico área Gradiente com rótulo de dados",
+      "description": "[No Description Provided]",
+      "author": "Jefferson Alves",
+      "uuid": "ca0d61ff-bc9f-4926-9bf0-3de5c2e1a02c",
+      "generated": "2023-03-23T11:21:54.884Z",
+      "previewImageBase64PNG": "data:image/png;base64,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"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Categoria",
+        "description": "Coluna que será utilizada no eixo x",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Medidada",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "font": "Segoe UI",
+    "text": {
+      "fontSize": 9,
+      "fontWeight": 600,
+      "color": "#B3B3B3",
+      "limit": 110,
+      "dy": -6
+    },
+    "area": {
+      "line": true,
+      "fillOpacity": 0.7,
+      "color": {
+        "x1": 0,
+        "x2": 0,
+        "y1": 1,
+        "y2": 0,
+        "gradient": "linear",
+        "stops": [
+          {
+            "offset": 0,
+            "color": "purple"
+          },
+          {
+            "offset": 1,
+            "color": "orange"
+          }
+        ]
+      }
+    },
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelFontSize": 10,
+      "labelFontWeight": 400,
+      "labelColor": "#b3b3b3",
+      "title": null
+    },
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#000",
+      "gridOpacity": 1,
+      "gridDash": [1, 5],
+      "labelFlush": false
+    },
+    "line": {
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "header": {
+      "titleColor": "#FFFFFF",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#D2D0CE"
+    }
+  },
+  "data": {"name": "dataset"},
+
+
+  "params": [
+    { "name": "linha_cor", "value": "#EF9010" },
+    { "name": "linha_espessura", "value": 3 },
+
+    { "name": "marcador_cor", "value": "#f1f1f1" },
+    { "name": "marcador_tam", "value": 0 },
+    { "name": "marcador_espessura", "value": 2  }
+  ],
+
+
+  "encoding": {
+    "x": {
+      "type": "nominal",
+      "field": "__0__",
+      "sort": ["jan"],
+      "axis": {
+        "labelAngle": 0,
+        "labelPadding": 10
+      }
+    },
+    "y": {
+      "type": "quantitative",
+      "field": "__1__",
+      "axis": null
+    },
+    "opacity": {
+      "condition": {
+        "test": "datum['__selected__'] == 'off' ",
+        "value": 0.3
+      },
+      "value": 1
+    }
+  },
+  "layer": [
+    {
+      "description": " ************************* AREA **************************",
+      "mark": {
+        "type": "area",
+        "interpolate": "natural",
+        "line": {
+          "stroke": {
+            "expr": "linha_cor"
+          },
+          "strokeWidth": {
+            "expr": "linha_espessura"
+          },
+          "strokeCap": "round",
+          "strokeDash": [0, 0]
+        },
+        "point": {
+          "shape": "circle",
+          "size": {
+            "expr": "marcador_tam"
+          },
+          "filled": false,
+          "fill": {
+            "expr": "marcador_cor"
+          },
+          "stroke": {
+            "expr": "linha_cor"
+          },
+          "strokeWidth": {
+            "expr": "marcador_espessura"
+          },
+          "tooltip": true
+        }
+      },
+      "encoding": {
+        "tooltip": [
+          {"field": "__0__"},
+          {"field": "__1__"}
+        ]
+      }
+    },
+    {
+      "description": " ******************** RÓTULO DADOS  ***********************",
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dx": 0,
+        "baseline": "bottom",
+        "angle": 0
+      },
+      "encoding": {
+        "text": {
+          "field": "__1__",
+          "format": ".3~s"
+        }
+      }
+    }
+  ]
+}

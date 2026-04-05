@@ -1,0 +1,241 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.4.0.20220831#4f0615e",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.4.0"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Gráfico de Rosca com imagens",
+      "description": "[No Description Provided]",
+      "author": "Jefferson Alves",
+      "uuid": "5f91a500-a1bc-402f-a8c5-da1fb121fd67",
+      "generated": "2023-03-25T15:06:44.550Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "URL Imagem",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Categoria",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__2__",
+        "name": "Medida",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__3__",
+        "name": "Porcentagem",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__4__",
+        "name": "Eixo X",
+        "description": "Cálculo realizado através de medida DAX",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__5__",
+        "name": "Eixo Y",
+        "description": "Cálculo realizado através de medida DAX",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"}
+  },
+  "data": {"name": "dataset"},
+
+
+  "params": [
+    {"name": "raio", "value": 100},
+    {"name": "expessura", "value": 85 },
+
+    {"name": "img_tam", "value": 30},
+
+    { "name": "fonte","value": "Cambria" },
+
+    { "name": "rot_cat_tam", "value": 10 },
+    { "name": "rot_cat_cor", "value": "#A6B6D1" },
+    { "name": "rot_cat_peso", "value": 600 },
+
+    { "name": "rot_dados_tam", "value": 10  },
+    { "name": "rot_dados_cor", "value": "#A6B6D1" },
+    { "name": "rot_dados_peso", "value": 800 },
+    { "name": "rot_dados_pos", "value": 17 }
+  ],
+
+
+  "encoding": {
+    "color": {
+      "field": "__1__",
+      "type": "nominal",
+      "scale": {
+        "range": [
+          "#13A2F0",
+          "#0C80C0",
+          "#096090",
+          "#064060"
+        ]
+      },
+      "legend": null
+    },
+    "theta": {
+      "field": "__3__",
+      "type": "quantitative"
+    },
+    "opacity": {
+      "condition": {
+        "test": {
+          "field": "__selected__",
+          "equal": "off"
+        },
+        "value": 0.3
+      },
+      "value": 1
+    },
+    "tooltip": [
+      {"field": "__1__"},
+      {"field": "__2__"}
+    ]
+  },
+  "layer": [
+    {
+      "description": "************ GRÁFICO ROSCA  *****************",
+      "mark": {
+        "type": "arc",
+        "radius": {"expr": "raio"},
+        "innerRadius": {
+          "expr": "expessura"
+        },
+        "padAngle": 0.015,
+        "cornerRadius": 7,
+        "tooltip": "true"
+      }
+    },
+    {
+      "description": "************ ROTULO CATEGORIA  *****************",
+      "mark": {
+        "type": "text",
+        "font": {"expr": "fonte"},
+        "fontSize": {
+          "expr": "rot_cat_tam"
+        },
+        "fill": {"expr": "rot_cat_cor"},
+        "fontWeight": {
+          "expr": "rot_cat_peso"
+        },
+        "align": "center",
+        "baseline": "top"
+      },
+      "encoding": {
+        "text": {
+          "field": "__1__",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "__4__",
+          "type": "quantitative",
+          "axis": null
+        },
+        "y": {
+          "field": "__5__",
+          "type": "quantitative",
+          "axis": null
+        }
+      }
+    },
+    {
+      "description": "************ ROTULO DADOS  *****************",
+      "transform": [
+        {
+          "calculate": " format( datum['__2__'], '.3s') + ' - ' + format( datum['__3__'], '.3~p')  ",
+          "as": "rotulo_ajustado"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": {"expr": "fonte"},
+        "fontSize": {
+          "expr": "rot_dados_tam"
+        },
+        "fill": {
+          "expr": "rot_dados_cor"
+        },
+        "fontWeight": {
+          "expr": "rot_dados_peso"
+        },
+        "align": "center",
+        "baseline": "top",
+        "dy": { "expr": "rot_dados_pos" }
+      },
+      "encoding": {
+        "text": {
+          "field": "rotulo_ajustado",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "__4__",
+          "type": "quantitative",
+          "axis": null
+        },
+        "y": {
+          "field": "__5__",
+          "type": "quantitative",
+          "axis": null
+        }
+      }
+    },
+    {
+      "description": "************ IMAGEM *******************",
+      "mark": {
+        "type": "image",
+        "width": {"expr": "img_tam"},
+        "height": {"expr": "img_tam"},
+        "baseline": "bottom",
+        "yOffset": -8
+      },
+      "encoding": {
+        "url": {
+          "field": "__0__",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "__4__",
+          "type": "quantitative",
+          "axis": null
+        },
+        "y": {
+          "field": "__5__",
+          "type": "quantitative",
+          "axis": null
+        }
+      }
+    }
+  ]
+}

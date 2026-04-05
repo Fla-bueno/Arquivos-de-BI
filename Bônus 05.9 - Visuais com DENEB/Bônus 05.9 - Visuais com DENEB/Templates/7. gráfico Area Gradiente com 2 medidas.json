@@ -1,0 +1,295 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.4.0.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.4.0"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Grafico de área gradiente com 2 mesdias",
+      "description": "[No Description Provided]",
+      "author": "Jefferson Alves",
+      "uuid": "672dd11a-a26f-4714-989b-26335d36c7c4",
+      "generated": "2023-03-22T22:57:19.840Z",
+      "previewImageBase64PNG": "data:image/png;base64,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"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Categoria",
+        "description": "coluna que será utilizada como eixo X",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Medida 1 ",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__2__",
+        "name": "Medida 2",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__3__",
+        "name": "Ultimo contexto ? ",
+        "description": "medida que retorne a string \"s\" quando estiver no último contexto ",
+        "type": "text",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    
+    "font": "Segoe UI",
+    
+    "style": {
+      "med_1_area": {
+        
+        "color": {
+          "x1": 1,
+          "x2": 1,
+          "y1": 1,
+          "y2": 0,
+          "gradient": "linear",
+          "stops": [
+            {
+              "offset": 0,
+              "color": "rgba(154, 200, 57, 0)"
+            },
+            {
+              "offset": 0.15,
+              "color": "rgba(154, 200, 57, 0.03)"
+            },
+            {
+              "offset": 0.3,
+              "color": "rgba(154, 200, 57, 0.1)"
+            },
+            {
+              "offset": 1,
+              "color": "rgba(154, 200, 57, 0.5)"
+            }
+          ]
+        }
+      },
+      
+      "med_2_area": {
+        "color": {
+          "x1": 1,
+          "y1": 1,
+          "x2": 1,
+          "y2": 0,
+          "gradient": "linear",
+          "stops": [
+            {
+              "offset": 0,
+              "color": "rgba(203, 130, 45, 0)"
+            },
+            {
+              "offset": 0.15,
+              "color": "rgba(203, 130, 45, 0.03)"
+            },
+            {
+              "offset": 0.3,
+              "color": "rgba(203, 130, 45, 0.1)"
+            },
+            {
+              "offset": 1,
+              "color": "rgba(203, 130, 45, 0.5)"
+            }
+          ]
+        }
+      },
+      
+      "marcador": {
+        "size": 50,
+        "filled": true
+      },
+      
+      "linha": {
+        "strokeWidth": 3
+      },
+      
+      "rot_serie": {
+        "fontSize": 12,
+        "fontWeight": 600
+      }
+    },
+    "axis": {
+      
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      
+      "labelAngle": 0,
+      "labelColor": "#A6B6D1",
+      "labelFontSize": 12,
+      
+      "title": null
+    },
+    
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#f1f1f155",
+      "gridDash": [1, 5],
+      "labelFlush": false,
+      "format": ".3~s"
+    },
+    
+    "line": {
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+  
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10}
+  },
+  "data": {"name": "dataset"},
+  "params": [
+    {
+      "name": "med_1_cor",
+      "value": "rgba(154, 200, 57, 1)"
+    },
+    {
+      "name": "med_2_cor",
+      "value": "rgba(203, 130, 45, 1)"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "__0__",
+      "type": "nominal",
+      "sort": ["jan"]
+    },
+    "y": {
+      "field": "__1__",
+      "type": "quantitative"
+    },
+    "opacity": {
+      "condition": {
+        "test": "datum['__selected__'] == 'off' ",
+        "value": 0.3
+      },
+      "value": 1
+    }
+  },
+  "layer": [
+    {
+      "description": " ********** MEDIDA 1 AREA (atual) ************ ",
+      "mark": {
+        "type": "area",
+        "interpolate": "natural",
+        "style": "med_1_area",
+        "line": {
+          "stroke": {
+            "expr": "med_1_cor"
+          },
+          "style": "linha"
+        }
+      },
+      "encoding": {
+        "tooltip": [
+          {"field": "__0__"},
+          {"field": "__1__"}
+        ]
+      }
+    },
+    {
+      "description": " ******** MEDIDA 1 MARCADOR  (atual_  *********** ",
+      "mark": {
+        "type": "point",
+        "style": "marcador",
+        "color": {"expr": "med_1_cor"}
+      }
+    },
+    {
+      "description": " ********** MEDIDA 1 RÓTULO  (atual)    *********** ",
+      "transform": [
+        {
+          "filter": "datum['__3__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 7,
+        "fill": {"expr": "med_1_cor"},
+        "style": "rot_serie",
+        "baseline": "top",
+        "dy": 3
+      },
+      "encoding": {
+        "text": {"value": "Atual"}
+      }
+    },
+    {
+      "description": " ********* MEDIDA 2 AREA (last year) ********** ",
+      "mark": {
+        "type": "area",
+        "interpolate": "natural",
+        "style": "med_2_area",
+        "line": {
+          "color": {
+            "expr": "med_2_cor"
+          },
+          "style": "linha"
+        }
+      },
+      "encoding": {
+        "y": {"field": "__2__"},
+        "tooltip": [
+          {"field": "__0__"},
+          {"field": "__2__"}
+        ]
+      }
+    },
+    {
+      "description": " ******** MEDIDA 2 MARCADOR  (last year)  ******** ",
+      "mark": {
+        "type": "point",
+        "style": "marcador",
+        "color": {"expr": "med_2_cor"}
+      },
+      "encoding": {
+        "y": {"field": "__2__"}
+      }
+    },
+    {
+      "description": " ******** MEDIDA 2 RÓTULO (last year) ********* ",
+      "transform": [
+        {
+          "filter": "datum['__3__'] == 's' "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 7,
+        "style": "rot_serie",
+        "fill": {"expr": "med_2_cor"},
+        "baseline": "bottom",
+        "dy": 3
+      },
+      "encoding": {
+        "y": {"field": "__2__"},
+        "text": {"value": "Last Year"}
+      }
+    }
+  ]
+}
