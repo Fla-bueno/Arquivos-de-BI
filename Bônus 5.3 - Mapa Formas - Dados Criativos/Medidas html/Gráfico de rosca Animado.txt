@@ -1,0 +1,108 @@
+Grafico Rosca Animado = 
+
+
+
+Var vRotulo_dados =  0.5
+
+Var vRotulo_categoria = "Exemplo"
+
+
+
+Return
+
+"
+
+
+<style>
+
+:root
+{
+    --fonte: Segoe UI;
+
+    --circ_fundo: #d9d9d9;
+    --circ_frente: #800;
+
+    --circ_raio: 4;
+
+
+    --rotulo_dados_cor: #828282;
+    --rotulo_dados_font_tam: 20;
+
+    --rotulo_categoria_cor: #828282;
+    --rotulo_categoria_font_tam: 12
+
+
+}
+
+
+</style>
+
+
+<body>
+
+    <svg  viewBox='0 0 133 121' fill='none' xmlns='http://www.w3.org/2000/svg'>
+
+
+        <defs>
+
+            <style>
+
+                #c_progresso
+                {
+                    
+                    transform-origin: center;
+                    transform-box: fill-box;
+
+                    transform: rotate(-90deg);
+
+                    stroke-dasharray: 314;
+                    stroke-dashoffset: 314;
+                    stroke-linecap: round;
+
+                    animation: anima_circulo 1s linear forwards;
+                }
+
+                @keyframes anima_circulo
+                {
+                    to
+                    {
+                        stroke-dashoffset:
+                        "
+                        &
+                            SWITCH(
+                                TRUE(),
+                                vRotulo_dados > 1, 0,
+                                vRotulo_dados < 0, 314,
+                                FORMAT( 314 - ( vRotulo_dados * 314), "0.0", "en-US")
+                            )
+                        &
+
+                        ";
+                    }
+                }
+
+            </style>
+        </defs>
+
+        <circle id='c_back' cx='67' cy='61' r='50' stroke='var(--circ_fundo)' stroke-width='var(--circ_raio)' />
+
+        <circle id='c_progresso' cx='67' cy='61' r='50' stroke='var(--circ_frente)' stroke-width='var(--circ_raio)' />
+        
+        <text id='rot_dados' fill='var(--rotulo_dados_cor)'  font-family='var(--fonte)' font-size='var(--rotulo_dados_font_tam)' text-anchor='middle' >
+            <tspan x='66' y='62.9'>
+                " & Format( vRotulo_dados, "0.0%")  & "
+            </tspan>
+        </text>
+
+        <text id='rot_categoria' fill='var(--rotulo_categoria_cor)'  font-family='var(--fonte)' font-size='var(--rotulo_categoria_font_tam)' text-anchor='middle' >
+            <tspan x='66' y='80'>
+                " & vRotulo_categoria  & "
+            </tspan>
+        </text>
+
+      
+     </svg>
+
+</body>
+
+"

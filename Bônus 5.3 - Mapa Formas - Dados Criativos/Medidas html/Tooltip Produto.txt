@@ -1,0 +1,85 @@
+Tooltip Animado = 
+
+Var vProduto_selecionado = "https://dadoscriativos.com/Imagem/MapaFormas/Scarpins.png"
+
+Var vCor = "#800"
+
+Return
+
+
+"
+<style>
+
+    :root
+    {
+        --cor_condicional: " & vCor & ";   
+        
+    }
+
+
+
+    #foto
+    {
+        transform-origin: center;
+        transform-box: fill-box;
+
+        animation: scale-in-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    }
+
+
+    @keyframes scale-in-center {
+        0% {
+            transform: scale(0);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+ 
+
+
+
+
+
+</style>
+
+
+
+<body>
+    
+
+    <svg  viewBox='0 0 200 300' fill='none' xmlns='http://www.w3.org/2000/svg'>
+
+        <g id='forma' fill='var(--cor_condicional)'>
+
+            <path id='forma_bottom' d='M114.267 110.716C108.993 112.696 103.198 112.802 97.8555 111.016L-87.971 48.8792C-103.124 43.8123 -109.472 25.8472 -100.867 12.3849L-42.2514 -79.3109C-37.8273 -86.2318 -30.2341 -90.4806 -22.0214 -90.6307L226.693 -95.1781C234.905 -95.3282 242.649 -91.3598 247.323 -84.6053L309.251 4.88651C318.343 18.0253 312.656 36.2104 297.698 41.8278L114.267 110.716Z'  />
+
+            <path id='forma_top' d='M119.061 490.881C111.922 493.414 104.129 493.414 96.9903 490.881L-74.621 429.988C-94.868 422.804 -102.961 398.496 -91.0607 380.609L-39.2957 302.802C-33.1779 293.606 -22.8655 288.081 -11.8207 288.081H227.872C238.917 288.081 249.229 293.606 255.347 302.802L307.112 380.609C319.012 398.496 310.919 422.804 290.672 429.988L119.061 490.881Z' />
+
+        </g>
+           
+            <image 
+                id='capa' width='200' height='300' 
+                href='https://dadoscriativos.com/Imagem/MapaFormas/capa.png'
+            />
+
+
+            <!-- ---------------------------- -->
+             <!-- Substituir URL abaixo -->
+            <!-- ---------------------------- -->
+
+            <image 
+                id='foto' x='17' y='30' width='165' height='165' 
+                href='" & vProduto_selecionado & "'
+             />
+
+     
+ 
+    </svg>
+
+
+</body>
+"
