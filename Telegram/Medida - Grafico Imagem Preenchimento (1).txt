@@ -1,0 +1,39 @@
+
+
+
+Gráfico Preenchimento = 
+
+
+/*
+Código desenvolvido por Jefferson Alves - Dados Criativos 
+
+Me siga nas Redes Sociais 
+
+Instagram: @dadoscriativos_
+https://www.instagram.com/dadoscriativos_/
+
+Linkedin: Jefferson Alves
+https://www.linkedin.com/in/jeffersonallvesneves/
+
+Youtube: Jefferson Alves - Dados Criativos
+https://www.youtube.com/c/JeffersonAlvesDadosCriativos
+
+*/
+
+
+
+Var vPorcentagem = 0.5
+
+Var vOpacidade = 0.2
+
+
+Var vImagem = "https://i.ibb.co/HT1KsjX/jefferson.png"
+
+
+Return 
+
+
+
+"
+<style>.conteiner{ position: relative; width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; } .img_1, .img_2 {position: absolute;width: 90%;height: 90%;opacity: "& FORMAT( vOpacidade, "0.0", "en-US")  &";}.img_2{opacity: 1;clip-path: polygon(0 var(--porcentagem), 100% var(--porcentagem), 100% 100%, 0 100%);animation: anima_img 1s linear forwards;}@keyframes anima_img{from{clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);} to{" & Var vPercentual =  ROUND( vPorcentagem * 100, 0)Var vResultado = SWITCH( TRUE(), vPercentual > 100, 0,vPercentual < 0, 100,100 - vPercentual )Return"clip-path: polygon(0 "& vResultado & "%, 100%  "& vResultado & "%, 100% 100%, 0 100%);}} </style> <div class='conteiner'> <img src='" & vImagem & "' class='img_1'> <img src='" & vImagem& "' class='img_2'> </div> 
+"
