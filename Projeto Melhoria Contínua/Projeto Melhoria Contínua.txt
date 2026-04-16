@@ -1,0 +1,21 @@
+Projeto de otimização de carga - 11/10/2023
+
+Objetivo:diminuir custos otimizando cargas por meio de planejamento
+
+Foi criado um grupo composto por integrantes dos setores de Qualidade, NAC, Transporte e Operacional para discutir ideias para implementar no projeto.
+
+Dores do Transporte : preço caro pela falta de otimização  de carga, carros saindo sem a capacidade total de carga, pedidos para o mesmo lugar saindo em datas diferentes, evidenciando a falta de comunicação com o comercial.
+
+Dores do NAC : falta de alguém para observar a consolidação de pedidos por região, maior comunicação com o transporte.
+
+Sugestão da Qualidade : criar um funil de demanda, em que o gerente definiria essa consolidação entre os supervisores.
+
+Sugestão do NAC : criação de um horário de corte para transportadoras
+
+Custos adicionais cobrados em sistema, evitando excesso de retrabalho e pedidos cancelados.
+
+Sugestão de um novo projeto de desmembrar custos entre setores evitando a evasão de custos.
+
+Sugestão do Operacional : cobrar recebimento antes das 48 horas previstas em contrato.
+
+Elaboração de um projeto piloto de horário de corte para transportadoras.
