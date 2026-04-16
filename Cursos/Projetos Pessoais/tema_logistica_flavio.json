@@ -1,0 +1,41 @@
+{
+  "name": "Dashboard Logistica Flavio",
+  "dataColors": [
+    "#4FC3F7",
+    "#F5A623",
+    "#66BB6A",
+    "#FF7043",
+    "#B39DDB",
+    "#26C6DA",
+    "#FFCA28",
+    "#EF5350"
+  ],
+  "background": "#0A1628",
+  "foreground": "#FFFFFF",
+  "tableAccent": "#F5A623",
+  "maximum": "#66BB6A",
+  "minimum": "#FF7043",
+  "null": "#B0BEC5",
+  "textClasses": {
+    "callout": {
+      "fontSize": 28,
+      "fontFace": "Segoe UI",
+      "color": "#F5A623"
+    },
+    "title": {
+      "fontSize": 14,
+      "fontFace": "Segoe UI",
+      "color": "#FFFFFF"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI",
+      "color": "#FFFFFF"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#B0BEC5"
+    }
+  }
+}
